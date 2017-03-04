@@ -56,7 +56,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.chkAddCoruse = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -363,19 +363,19 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // checkBox7
+            // chkAddCoruse
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox7.Location = new System.Drawing.Point(110, 4);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(48, 17);
-            this.checkBox7.TabIndex = 130;
-            this.checkBox7.Text = "Add";
-            this.checkBox7.UseVisualStyleBackColor = false;
-            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
+            this.chkAddCoruse.AutoSize = true;
+            this.chkAddCoruse.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.chkAddCoruse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAddCoruse.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkAddCoruse.Location = new System.Drawing.Point(110, 4);
+            this.chkAddCoruse.Name = "chkAddCoruse";
+            this.chkAddCoruse.Size = new System.Drawing.Size(48, 17);
+            this.chkAddCoruse.TabIndex = 130;
+            this.chkAddCoruse.Text = "Add";
+            this.chkAddCoruse.UseVisualStyleBackColor = false;
+            this.chkAddCoruse.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
             // 
             // label5
             // 
@@ -402,10 +402,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Student_form_data;
-            this.ClientSize = new System.Drawing.Size(600, 775);
+            this.ClientSize = new System.Drawing.Size(600, 772);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.checkBox7);
+            this.Controls.Add(this.chkAddCoruse);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.comboBox7);
@@ -473,7 +473,7 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox chkAddCoruse;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox1;
     }
