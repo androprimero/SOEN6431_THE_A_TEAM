@@ -26,154 +26,154 @@ namespace WindowsFormsApplication1
             string dbDir = Directory.GetParent(Directory.GetParent(currentDir).FullName).FullName;
             con.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbDir + @"\\university.accdb;Persist Security Info=False";
             con.Open();
-           btnAddStudent.Enabled = false;
+           button2.Enabled = false;
             //Connection with database
             //form load activities
-                cmbStudentDep.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbStudentCourse.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbStudentClass.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbStudentGenre.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbUDStudentList.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbSStudentList.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbDStudentList.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBox5.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBox6.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBox7.DropDownStyle = ComboBoxStyle.DropDownList;
                 //Update
-                txtUDStudent.Enabled = false;
-                chkListUDStudent.Enabled = false;
-                cmbUDStudentList.Enabled = false;
-                btnUDStudent.Enabled = false;
+                textBox6.Enabled = false;
+                checkBox1.Enabled = false;
+                comboBox5.Enabled = false;
+                button1.Enabled = false;
                 //Search
-                txtSStudentId.Enabled = false;
-                chkListSStudent.Enabled = false;
-                cmbSStudentList.Enabled = false;
+                textBox7.Enabled = false;
+                checkBox2.Enabled = false;
+                comboBox6.Enabled = false;
                 
                 //Delete
-                txtDStudentID.Enabled = false;
-                cmbDStudentList.Enabled = false;
-                btnDStudent.Enabled = false;
-                chkListDStudent.Enabled = false;
+                textBox8.Enabled = false;
+                comboBox7.Enabled = false;
+                button4.Enabled = false;
+                checkBox3.Enabled = false;
         }
-        private void chkUpdateStudent_CheckedChanged(object sender, EventArgs e)
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {   
             //Update
-            if (chkUpdateStudent.Checked == true)
+            if (checkBox4.Checked == true)
             {
-                txtStudentId.Enabled = false;
-                txtStudentName.Enabled = true;
-                txtStudentLName.Enabled = true;
-                txtStudentAddress.Enabled = true;
-                txtStudentPostCode.Enabled = true;
+                textBox1.Enabled = false;
+                textBox2.Enabled = true;
+                textBox3.Enabled = true;
+                textBox4.Enabled = true;
+                textBox5.Enabled = true;
                 //Add checkbox
                 chkAddStudent.Checked = false;  
-                txtUDStudent.Enabled = true;
-                chkListUDStudent.Enabled = true;
-                cmbUDStudentList.Enabled = false;
-                btnUDStudent.Enabled = true;
+                textBox6.Enabled = true;
+                checkBox1.Enabled = true;
+                comboBox5.Enabled = false;
+                button1.Enabled = true;
                 //Search
-                txtSStudentId.Enabled = false;
-                chkListSStudent.Enabled = false;
-                cmbSStudentList.Enabled = false;
+                textBox7.Enabled = false;
+                checkBox2.Enabled = false;
+                comboBox6.Enabled = false;
                 //Delete
-                txtDStudentID.Enabled = false;
-                cmbDStudentList.Enabled = false;
-                btnDStudent.Enabled = false;
-                chkListDStudent.Enabled = false;
+                textBox8.Enabled = false;
+                comboBox7.Enabled = false;
+                button4.Enabled = false;
+                checkBox3.Enabled = false;
                 //Check boxes
-                chkSearchStudent.Checked = false;
-                chkDeleteStudent.Checked = false;
+                checkBox5.Checked = false;
+                checkBox6.Checked = false;
             }
             else
             {
 
-                txtStudentId.Enabled = true;
-                txtUDStudent.Enabled = false;
-                chkListUDStudent.Enabled = false;
-                cmbUDStudentList.Enabled = false;
-                btnUDStudent.Enabled = false;
+                textBox1.Enabled = true;
+                textBox6.Enabled = false;
+                checkBox1.Enabled = false;
+                comboBox5.Enabled = false;
+                button1.Enabled = false;
             }
         }
 
-        private void chkUpdateStudent_CheckStateChanged(object sender, EventArgs e)
+        private void checkBox4_CheckStateChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void chkSearchStudent_CheckedChanged(object sender, EventArgs e)
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
             //Search
-            if (chkSearchStudent.Checked == true)
+            if (checkBox5.Checked == true)
             {
 
                 //Add checkbox
                 chkAddStudent.Checked = false;  
-                txtSStudentId.Enabled = true;
-                chkListSStudent.Enabled = true;
-                cmbSStudentList.Enabled = false;
+                textBox7.Enabled = true;
+                checkBox2.Enabled = true;
+                comboBox6.Enabled = false;
                 //Update
-                txtUDStudent.Enabled = false;
-                chkListUDStudent.Enabled = false;
-                cmbUDStudentList.Enabled = false;
-                btnUDStudent.Enabled = false;
+                textBox6.Enabled = false;
+                checkBox1.Enabled = false;
+                comboBox5.Enabled = false;
+                button1.Enabled = false;
                 //Delete  
-                txtDStudentID.Enabled = false;
-                cmbDStudentList.Enabled = false;
-                btnDStudent.Enabled = false;
-                chkListDStudent.Enabled = false;
+                textBox8.Enabled = false;
+                comboBox7.Enabled = false;
+                button4.Enabled = false;
+                checkBox3.Enabled = false;
                 //Check boxes
-                chkUpdateStudent.Checked = false;
-                chkDeleteStudent.Checked = false;
+                checkBox4.Checked = false;
+                checkBox6.Checked = false;
             }
             else
             {
-                txtSStudentId.Enabled = false;
-                chkListSStudent.Enabled = false;
-                cmbSStudentList.Enabled = false;
+                textBox7.Enabled = false;
+                checkBox2.Enabled = false;
+                comboBox6.Enabled = false;
             }
         }
 
-        private void chkDeleteStudent_CheckedChanged(object sender, EventArgs e)
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
             //Delete
-            if (chkDeleteStudent.Checked == true)
+            if (checkBox6.Checked == true)
             {
-                txtStudentId.Enabled = true;
-                txtStudentName.Enabled = true;
-                txtStudentLName.Enabled = true;
-                txtStudentAddress.Enabled = true;
-                txtStudentPostCode.Enabled = true;
+                textBox1.Enabled = true;
+                textBox2.Enabled = true;
+                textBox3.Enabled = true;
+                textBox4.Enabled = true;
+                textBox5.Enabled = true;
                
 
                 //Add checkbox
                 chkAddStudent.Checked = false;  
-                txtDStudentID.Enabled = true;
-                cmbDStudentList.Enabled = false;
-                btnDStudent.Enabled = true;
-                chkListDStudent.Enabled = true;
+                textBox8.Enabled = true;
+                comboBox7.Enabled = false;
+                button4.Enabled = true;
+                checkBox3.Enabled = true;
                 //Update
-                txtUDStudent.Enabled = false;
-                chkListUDStudent.Enabled = false;
-                cmbUDStudentList.Enabled = false;
-                btnUDStudent.Enabled = false;
+                textBox6.Enabled = false;
+                checkBox1.Enabled = false;
+                comboBox5.Enabled = false;
+                button1.Enabled = false;
                 //Search
-                txtSStudentId.Enabled = false;
-                chkListSStudent.Enabled = false;
-                cmbSStudentList.Enabled = false;
+                textBox7.Enabled = false;
+                checkBox2.Enabled = false;
+                comboBox6.Enabled = false;
                 //check boxes
-                chkUpdateStudent.Checked = false;
-                chkSearchStudent.Checked = false;
+                checkBox4.Checked = false;
+                checkBox5.Checked = false;
             }
             else
             {
-                txtDStudentID.Enabled = false;
-                cmbDStudentList.Enabled = false;
-                btnDStudent.Enabled = false;
-                chkListDStudent.Enabled = false;
+                textBox8.Enabled = false;
+                comboBox7.Enabled = false;
+                button4.Enabled = false;
+                checkBox3.Enabled = false;
             }
         }
 
-        private void chkListUDStudent_CheckedChanged(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            cmbUDStudentList.Items.Clear();
-            if (chkListUDStudent.Checked == true)
+            comboBox5.Items.Clear();
+            if (checkBox1.Checked == true)
             {
                 //Check box with database
                 OleDbCommand command1 = new OleDbCommand();
@@ -182,23 +182,23 @@ namespace WindowsFormsApplication1
                 OleDbDataReader reader = command1.ExecuteReader();
                 while (reader.Read())
                 {
-                    cmbUDStudentList.Items.Add(reader["personnum"].ToString());
+                    comboBox5.Items.Add(reader["personnum"].ToString());
                 }
                 //Update Checkbox
-                txtUDStudent.Enabled = false;
-                cmbUDStudentList.Enabled = true;
+                textBox6.Enabled = false;
+                comboBox5.Enabled = true;
             }
             else
             {
-                txtUDStudent.Enabled = true;
-                cmbUDStudentList.Enabled = false;    
+                textBox6.Enabled = true;
+                comboBox5.Enabled = false;    
             }
         }
 
-        private void chkListSStudent_CheckedChanged(object sender, EventArgs e)
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            cmbSStudentList.Items.Clear();
-            if (chkListSStudent.Checked == true)
+            comboBox6.Items.Clear();
+            if (checkBox2.Checked == true)
             {
                 //Check box with database
                 OleDbCommand command1 = new OleDbCommand();
@@ -207,23 +207,23 @@ namespace WindowsFormsApplication1
                 OleDbDataReader reader = command1.ExecuteReader();
                 while (reader.Read())
                 {
-                    cmbSStudentList.Items.Add(reader["personnum"].ToString());
+                    comboBox6.Items.Add(reader["personnum"].ToString());
                 }
                 //Search Checkbox
-                txtSStudentId.Enabled = false;
-                cmbSStudentList.Enabled = true;
+                textBox7.Enabled = false;
+                comboBox6.Enabled = true;
             }
             else
             {
-                txtSStudentId.Enabled = true;
-                cmbSStudentList.Enabled = false;
+                textBox7.Enabled = true;
+                comboBox6.Enabled = false;
             }
         }
 
-        private void chkListDStudent_CheckedChanged(object sender, EventArgs e)
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            cmbDStudentList.Items.Clear();
-            if (chkListDStudent.Checked == true)
+            comboBox7.Items.Clear();
+            if (checkBox3.Checked == true)
             {
                 //Check box with database
                 OleDbCommand command1 = new OleDbCommand();
@@ -232,23 +232,23 @@ namespace WindowsFormsApplication1
                 OleDbDataReader reader = command1.ExecuteReader();
                 while (reader.Read())
                 {
-                    cmbDStudentList.Items.Add(reader["personnum"].ToString());
+                    comboBox7.Items.Add(reader["personnum"].ToString());
                 }
                 //Delete Checkbox
-                txtDStudentID.Enabled = false;
-                cmbDStudentList.Enabled = true;
+                textBox8.Enabled = false;
+                comboBox7.Enabled = true;
             }
             else
             {
-                txtDStudentID.Enabled = true;
-                cmbDStudentList.Enabled = false;
+                textBox8.Enabled = true;
+                comboBox7.Enabled = false;
             }
         }
 
-        private void txtStudentId_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
             bool flag = false;  
-            string input = txtStudentId.Text;
+            string input = textBox1.Text;
             try
             {
                 int id = int.Parse(input);
@@ -266,22 +266,22 @@ namespace WindowsFormsApplication1
                 }
                 if (!flag)
                 {
-                    lblStudentID.ForeColor = System.Drawing.Color.Green;
+                    label2.ForeColor = System.Drawing.Color.Green;
                 }
                 else
                 {
-                    lblStudentID.ForeColor = System.Drawing.Color.Red;        
+                    label2.ForeColor = System.Drawing.Color.Red;        
                 }
             }
             catch
             {
-                lblStudentID.ForeColor = System.Drawing.Color.Red;
+                label2.ForeColor = System.Drawing.Color.Red;
             }
             
         }
 
 
-        private void btnAddStudent_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             OleDbCommand com1 = new OleDbCommand();
             OleDbCommand com2 = new OleDbCommand();
@@ -295,19 +295,19 @@ namespace WindowsFormsApplication1
             com4.Connection = con;
             com5.Connection = con;
             bool flag1 = false, flag2 = false;
-            string studentId = txtStudentId.Text;
-            string fname = txtStudentName.Text;
-            string lname = txtStudentLName.Text;
-            string address = txtStudentAddress.Text;
-            string postalCode = txtStudentPostCode.Text;
+            string studentId = textBox1.Text;
+            string fname = textBox2.Text;
+            string lname = textBox3.Text;
+            string address = textBox4.Text;
+            string postalCode = textBox5.Text;
 
-            if (studentId != "" && fname != "" && lname != "" && address != "" && postalCode != "" && cmbStudentDep.SelectedItem != null && cmbStudentGenre.SelectedItem != null && cmbStudentCourse.SelectedItem != null)
+            if (studentId != "" && fname != "" && lname != "" && address != "" && postalCode != "" && comboBox1.SelectedItem != null && comboBox4.SelectedItem != null && comboBox2.SelectedItem != null)
             {
                 com4.CommandText = "Select courseid , coursetitle from course";
                 OleDbDataReader courseRead = com4.ExecuteReader();
                 while (courseRead.Read())
                 {
-                    if (cmbStudentCourse.SelectedItem.ToString() == courseRead["coursetitle"].ToString())
+                    if (comboBox2.SelectedItem.ToString() == courseRead["coursetitle"].ToString())
                     {
                         flag1 = true;
                         break;
@@ -317,7 +317,7 @@ namespace WindowsFormsApplication1
                 OleDbDataReader DeRead = com5.ExecuteReader();
                 while (DeRead.Read())
                 {
-                    if (cmbStudentDep.SelectedItem.ToString() == DeRead["depName"].ToString())
+                    if (comboBox1.SelectedItem.ToString() == DeRead["depName"].ToString())
                     {
                         flag2 = true;
                         break;
@@ -327,8 +327,8 @@ namespace WindowsFormsApplication1
                 {
                     try
                     {
-                        com1.CommandText = "Insert into person(personId,fname,lname,dob,postalcode,gender,address) values(" + int.Parse(studentId) + ",'" + fname + "','" + lname + "'," + dtpStudentBirthday.Value.ToString("mm-dd-yyyy") + "," + long.Parse(postalCode) + ",'" + cmbStudentGenre.SelectedItem.ToString() + "','" + address + "')";
-                        com2.CommandText = "Insert into student(studentid,class,Deptid) values(" + int.Parse(studentId) + ",'" + cmbStudentClass.SelectedItem.ToString() + "'," + int.Parse(DeRead["stdDept"].ToString()) + ")";
+                        com1.CommandText = "Insert into person(personId,fname,lname,dob,postalcode,gender,address) values(" + int.Parse(studentId) + ",'" + fname + "','" + lname + "'," + dateTimePicker1.Value.ToString("mm-dd-yyyy") + "," + long.Parse(postalCode) + ",'" + comboBox4.SelectedItem.ToString() + "','" + address + "')";
+                        com2.CommandText = "Insert into student(studentid,class,Deptid) values(" + int.Parse(studentId) + ",'" + comboBox3.SelectedItem.ToString() + "'," + int.Parse(DeRead["stdDept"].ToString()) + ")";
                         com3.CommandText = "Insert into Register(courseid, studentid) values(" + int.Parse(courseRead["courseid"].ToString()) + "," + int.Parse(studentId) + ")";
 
                         com1.ExecuteNonQuery();
@@ -348,24 +348,24 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void txtStudentId_Leave(object sender, EventArgs e)
+        private void textBox1_Leave(object sender, EventArgs e)
         {
-            string input = txtStudentId.Text;
+            string input = textBox1.Text;
             try
             {
                 long id = long.Parse(input);
-                lblStudentID.ForeColor = System.Drawing.Color.Green;
+                label2.ForeColor = System.Drawing.Color.Green;
             }
             catch
             {
-                txtStudentId.Focus();
-                lblStudentID.ForeColor = System.Drawing.Color.Red;
+                textBox1.Focus();
+                label2.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void txtStudentName_Leave(object sender, EventArgs e)
+        private void textBox2_Leave(object sender, EventArgs e)
         {
-            string input = txtStudentName.Text;
+            string input = textBox2.Text;
             int count = 0;
             for (int i = 0; i < input.Length; i++)
             {
@@ -375,18 +375,18 @@ namespace WindowsFormsApplication1
             if (input.Length != 0)
             {
                 if(count == input.Length)
-                lblStudentName.ForeColor = System.Drawing.Color.Green;
+                label6.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
-                txtStudentName.Focus();
-                lblStudentName.ForeColor = System.Drawing.Color.Red;
+                textBox2.Focus();
+                label6.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void txtStudentLName_Leave(object sender, EventArgs e)
+        private void textBox3_Leave(object sender, EventArgs e)
         {
-            string input = txtStudentLName.Text;
+            string input = textBox3.Text;
             int count = 0;
             for (int i = 0; i < input.Length; i++)
             {
@@ -397,44 +397,44 @@ namespace WindowsFormsApplication1
             {
                 if (count == input.Length)
                 {
-                    lblStudentLName.ForeColor = System.Drawing.Color.Green;
+                    label7.ForeColor = System.Drawing.Color.Green;
                 }
             }
             else
             {
-                txtStudentLName.Focus();
-                lblStudentLName.ForeColor = System.Drawing.Color.Red;
+                textBox3.Focus();
+                label7.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void txtStudentPostCode_Leave(object sender, EventArgs e)
+        private void textBox5_Leave(object sender, EventArgs e)
         {
-            string input = txtStudentPostCode.Text;
+            string input = textBox5.Text;
             try
             {
                 long id = long.Parse(input);
-                lblStudentPostCode.ForeColor = System.Drawing.Color.Green;
+                label11.ForeColor = System.Drawing.Color.Green;
             }
             catch
             {
-                txtStudentPostCode.Focus();
-                lblStudentPostCode.ForeColor = System.Drawing.Color.Red;
+                textBox5.Focus();
+                label11.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void dtpStudentBirthday_ValueChanged(object sender, EventArgs e)
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void txtUDStudent_TextChanged(object sender, EventArgs e)
+        private void textBox6_TextChanged(object sender, EventArgs e)
         {
             //Check box with database
-            txtStudentId.Enabled = false;
-            cmbStudentDep.Items.Clear();
-            cmbStudentCourse.Items.Clear();
-            cmbStudentClass.Items.Clear();
-            cmbStudentGenre.Items.Clear();
+            textBox1.Enabled = false;
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
+            comboBox4.Items.Clear();
             bool flag = false;
             OleDbCommand command1 = new OleDbCommand();
             command1.Connection = con;
@@ -442,7 +442,7 @@ namespace WindowsFormsApplication1
             OleDbDataReader reader = command1.ExecuteReader();
             while (reader.Read())
             {
-                if (txtUDStudent.Text == reader["personnum"].ToString()) 
+                if (textBox6.Text == reader["personnum"].ToString()) 
                 {
                     flag = true;
                     break;
@@ -450,8 +450,8 @@ namespace WindowsFormsApplication1
             }
             if (flag)
             {
-                lblUDStudentID.ForeColor = System.Drawing.Color.Green;
-                txtStudentId.Text = reader["personnum"].ToString();
+                label13.ForeColor = System.Drawing.Color.Green;
+                textBox1.Text = reader["personnum"].ToString();
                 //Student Department
                 OleDbCommand com2 = new OleDbCommand();
                 com2.Connection = con;
@@ -461,48 +461,48 @@ namespace WindowsFormsApplication1
                 {
                     if (reader["stdclass"].ToString() == readStd["stclass"].ToString())
                     {
-                        cmbStudentDep.Items.Add(readStd["deptname"].ToString());
-                        cmbStudentClass.Items.Add(readStd["stclass"].ToString());
+                        comboBox1.Items.Add(readStd["deptname"].ToString());
+                        comboBox3.Items.Add(readStd["stclass"].ToString());
                         break;
                     }
                 }
-                cmbStudentDep.SelectedIndex = 0;
-                cmbStudentClass.SelectedIndex = 0;
-                txtStudentName.Text = reader["perfname"].ToString();
-                txtStudentLName.Text = reader["perlname"].ToString();
-                cmbStudentGenre.Items.Add(reader["pergen"].ToString());
-                cmbStudentGenre.SelectedIndex = 0;
-                txtStudentPostCode.Text = reader["perpost"].ToString();
-                txtStudentAddress.Text = reader["peradd"].ToString();
-                dtpStudentBirthday.Value = Convert.ToDateTime(reader["perdob"]);
+                comboBox1.SelectedIndex = 0;
+                comboBox3.SelectedIndex = 0;
+                textBox2.Text = reader["perfname"].ToString();
+                textBox3.Text = reader["perlname"].ToString();
+                comboBox4.Items.Add(reader["pergen"].ToString());
+                comboBox4.SelectedIndex = 0;
+                textBox5.Text = reader["perpost"].ToString();
+                textBox4.Text = reader["peradd"].ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(reader["perdob"]);
 
             }
             else
             {
-                txtStudentId.Text = "";
-                txtStudentName.Text = "";
-                txtStudentLName.Text = "";
-                cmbStudentDep.Items.Clear();
-                cmbStudentClass.Items.Clear();
-                cmbStudentGenre.Items.Clear();
-                txtStudentAddress.Text = "";
-                txtStudentPostCode.Text = "";
-                dtpStudentBirthday.Value = DateTime.Now;
-                lblUDStudentID.ForeColor = System.Drawing.Color.Red;
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                comboBox1.Items.Clear();
+                comboBox3.Items.Clear();
+                comboBox4.Items.Clear();
+                textBox4.Text = "";
+                textBox5.Text = "";
+                dateTimePicker1.Value = DateTime.Now;
+                label13.ForeColor = System.Drawing.Color.Red;
             }
         }
-        private void txtSStudentId_TextChanged(object sender, EventArgs e)
+        private void textBox7_TextChanged(object sender, EventArgs e)
         {
             //Check box with database
-            txtStudentId.Enabled = false;
-            txtStudentName.Enabled = false;
-            txtStudentLName.Enabled = false;
-            txtStudentAddress.Enabled = false;
-            txtStudentPostCode.Enabled = false;
-            cmbStudentDep.Items.Clear();
-            cmbStudentCourse.Items.Clear();
-            cmbStudentClass.Items.Clear();
-            cmbStudentGenre.Items.Clear();
+            textBox1.Enabled = false;
+            textBox2.Enabled = false;
+            textBox3.Enabled = false;
+            textBox4.Enabled = false;
+            textBox5.Enabled = false;
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
+            comboBox4.Items.Clear();
             bool flag = false;
             OleDbCommand command1 = new OleDbCommand();
             command1.Connection = con;
@@ -510,7 +510,7 @@ namespace WindowsFormsApplication1
             OleDbDataReader reader = command1.ExecuteReader();
             while (reader.Read())
             {
-                if (txtSStudentId.Text == reader["personnum"].ToString())
+                if (textBox7.Text == reader["personnum"].ToString())
                 {
                     flag = true;
                     break;
@@ -518,8 +518,8 @@ namespace WindowsFormsApplication1
             }
             if (flag)
             {
-                lblSStudentID.ForeColor = System.Drawing.Color.Green;
-                txtStudentId.Text = reader["personnum"].ToString();
+                label15.ForeColor = System.Drawing.Color.Green;
+                textBox1.Text = reader["personnum"].ToString();
                 //Student Department
                 OleDbCommand com2 = new OleDbCommand();
                 com2.Connection = con;
@@ -529,50 +529,50 @@ namespace WindowsFormsApplication1
                 {
                     if (reader["stdclass"].ToString() == readStd["stclass"].ToString())
                     {
-                        cmbStudentDep.Items.Add(readStd["deptname"].ToString());
-                        cmbStudentClass.Items.Add(readStd["stclass"].ToString());
+                        comboBox1.Items.Add(readStd["deptname"].ToString());
+                        comboBox3.Items.Add(readStd["stclass"].ToString());
                         break;
                     }
                 }
-                cmbStudentDep.SelectedIndex = 0;
-                cmbStudentClass.SelectedIndex = 0;
-                txtStudentName.Text = reader["perfname"].ToString();
-                txtStudentLName.Text = reader["perlname"].ToString();
-                cmbStudentGenre.Items.Add(reader["pergen"].ToString());
-                cmbStudentGenre.SelectedIndex = 0;
-                txtStudentPostCode.Text = reader["perpost"].ToString();
-                txtStudentAddress.Text = reader["peradd"].ToString();
-                dtpStudentBirthday.Value = Convert.ToDateTime(reader["perdob"]);
+                comboBox1.SelectedIndex = 0;
+                comboBox3.SelectedIndex = 0;
+                textBox2.Text = reader["perfname"].ToString();
+                textBox3.Text = reader["perlname"].ToString();
+                comboBox4.Items.Add(reader["pergen"].ToString());
+                comboBox4.SelectedIndex = 0;
+                textBox5.Text = reader["perpost"].ToString();
+                textBox4.Text = reader["peradd"].ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(reader["perdob"]);
 
             }
             else
             {
-                txtStudentId.Text = "";
-                txtStudentName.Text = "";
-                txtStudentLName.Text = "";
-                cmbStudentDep.Items.Clear();
-                cmbStudentClass.Items.Clear();
-                cmbStudentGenre.Items.Clear();
-                txtStudentAddress.Text = "";
-                txtStudentPostCode.Text = "";
-                dtpStudentBirthday.Value = DateTime.Now;
-                lblUDStudentID.ForeColor = System.Drawing.Color.Red;
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                comboBox1.Items.Clear();
+                comboBox3.Items.Clear();
+                comboBox4.Items.Clear();
+                textBox4.Text = "";
+                textBox5.Text = "";
+                dateTimePicker1.Value = DateTime.Now;
+                label13.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void txtDStudentID_TextChanged(object sender, EventArgs e)
+        private void textBox8_TextChanged(object sender, EventArgs e)
         {
             //Check box with database
             //Check box with database
-            txtStudentId.Enabled = false;
-            txtStudentName.Enabled = false;
-            txtStudentLName.Enabled = false;
-            txtStudentAddress.Enabled = false;
-            txtStudentPostCode.Enabled = false;
-            cmbStudentDep.Items.Clear();
-            cmbStudentCourse.Items.Clear();
-            cmbStudentClass.Items.Clear();
-            cmbStudentGenre.Items.Clear();
+            textBox1.Enabled = false;
+            textBox2.Enabled = false;
+            textBox3.Enabled = false;
+            textBox4.Enabled = false;
+            textBox5.Enabled = false;
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
+            comboBox4.Items.Clear();
             bool flag = false;
             OleDbCommand command1 = new OleDbCommand();
             command1.Connection = con;
@@ -580,7 +580,7 @@ namespace WindowsFormsApplication1
             OleDbDataReader reader = command1.ExecuteReader();
             while (reader.Read())
             {
-                if (txtDStudentID.Text == reader["personnum"].ToString())
+                if (textBox8.Text == reader["personnum"].ToString())
                 {
                     flag = true;
                     break;
@@ -588,8 +588,8 @@ namespace WindowsFormsApplication1
             }
             if (flag)
             {
-                lblDStudentID.ForeColor = System.Drawing.Color.Green;
-                txtStudentId.Text = reader["personnum"].ToString();
+                label17.ForeColor = System.Drawing.Color.Green;
+                textBox1.Text = reader["personnum"].ToString();
                 //Student Department
                 OleDbCommand com2 = new OleDbCommand();
                 com2.Connection = con;
@@ -599,50 +599,50 @@ namespace WindowsFormsApplication1
                 {
                     if (reader["stdclass"].ToString() == readStd["stclass"].ToString())
                     {
-                        cmbStudentDep.Items.Add(readStd["deptname"].ToString());
-                        cmbStudentClass.Items.Add(readStd["stclass"].ToString());
+                        comboBox1.Items.Add(readStd["deptname"].ToString());
+                        comboBox3.Items.Add(readStd["stclass"].ToString());
                         break;
                     }
                 }
-                cmbStudentDep.SelectedIndex = 0;
-                cmbStudentClass.SelectedIndex = 0;
-                txtStudentName.Text = reader["perfname"].ToString();
-                txtStudentLName.Text = reader["perlname"].ToString();
-                cmbStudentGenre.Items.Add(reader["pergen"].ToString());
-                cmbStudentGenre.SelectedIndex = 0;
-                txtStudentPostCode.Text = reader["perpost"].ToString();
-                txtStudentAddress.Text = reader["peradd"].ToString();
-                dtpStudentBirthday.Value = Convert.ToDateTime(reader["perdob"]);
+                comboBox1.SelectedIndex = 0;
+                comboBox3.SelectedIndex = 0;
+                textBox2.Text = reader["perfname"].ToString();
+                textBox3.Text = reader["perlname"].ToString();
+                comboBox4.Items.Add(reader["pergen"].ToString());
+                comboBox4.SelectedIndex = 0;
+                textBox5.Text = reader["perpost"].ToString();
+                textBox4.Text = reader["peradd"].ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(reader["perdob"]);
 
             }
             else
             {
-                txtStudentId.Text = "";
-                txtStudentName.Text = "";
-                txtStudentLName.Text = "";
-                cmbStudentDep.Items.Clear();
-                cmbStudentClass.Items.Clear();
-                cmbStudentGenre.Items.Clear();
-                txtStudentAddress.Text = "";
-                txtStudentPostCode.Text = "";
-                dtpStudentBirthday.Value = DateTime.Now;
-                lblUDStudentID.ForeColor = System.Drawing.Color.Red;
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                comboBox1.Items.Clear();
+                comboBox3.Items.Clear();
+                comboBox4.Items.Clear();
+                textBox4.Text = "";
+                textBox5.Text = "";
+                dateTimePicker1.Value = DateTime.Now;
+                label13.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void cmbStudentDep_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbStudentCourse.Items.Clear();
-            cmbStudentClass.Items.Clear();
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
               OleDbCommand com = new OleDbCommand();
                 com.Connection = con;
                 com.CommandText = "SELECT c.deptid as coursedept, c.courseid as cID , d.dname as dename, d.deptid as deptnum,  c.coursetitle as coursename  FROM Course c, Department d where c.deptid = d.deptid";
                 OleDbDataReader read = com.ExecuteReader();
                 while (read.Read())
                 {
-                    if (cmbStudentDep.SelectedItem.ToString() == read["dename"].ToString())
+                    if (comboBox1.SelectedItem.ToString() == read["dename"].ToString())
                     {
-                        cmbStudentCourse.Items.Add(read["coursename"].ToString());
+                        comboBox2.Items.Add(read["coursename"].ToString());
                     }
                 }
                 OleDbCommand com1 = new OleDbCommand();
@@ -651,23 +651,23 @@ namespace WindowsFormsApplication1
                 OleDbDataReader readclass = com1.ExecuteReader();
                 while (readclass.Read())
                 {
-                    if(cmbStudentDep.SelectedItem.ToString() == readclass["depname"].ToString())
+                    if(comboBox1.SelectedItem.ToString() == readclass["depname"].ToString())
                     {
-                        cmbStudentClass.Items.Add(readclass["cName"].ToString());
-                        cmbStudentClass.SelectedIndex = 0;
+                        comboBox3.Items.Add(readclass["cName"].ToString());
+                        comboBox3.SelectedIndex = 0;
                         break;
                     }
                 }
         }
 
-        private void cmbUDStudentList_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
             //update combobox
-            txtStudentId.Enabled = false;
-            cmbStudentDep.Items.Clear();
-            cmbStudentCourse.Items.Clear();
-            cmbStudentClass.Items.Clear();
-            cmbStudentGenre.Items.Clear();
+            textBox1.Enabled = false;
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
+            comboBox4.Items.Clear();
             bool flag = false;
             OleDbCommand command1 = new OleDbCommand();
             command1.Connection = con;
@@ -675,7 +675,7 @@ namespace WindowsFormsApplication1
             OleDbDataReader reader = command1.ExecuteReader();
             while (reader.Read())
             {
-                if (cmbUDStudentList.SelectedItem.ToString() == reader["personnum"].ToString())
+                if (comboBox5.SelectedItem.ToString() == reader["personnum"].ToString())
                 {
                     flag = true;
                     break;
@@ -683,8 +683,8 @@ namespace WindowsFormsApplication1
             }
             if (flag)
             {
-                lblUDStudentID.ForeColor = System.Drawing.Color.Green;
-                txtStudentId.Text = reader["personnum"].ToString();
+                label13.ForeColor = System.Drawing.Color.Green;
+                textBox1.Text = reader["personnum"].ToString();
                 //Student Department
                 OleDbCommand com2 = new OleDbCommand();
                 com2.Connection = con;
@@ -694,114 +694,114 @@ namespace WindowsFormsApplication1
                 {
                     if (reader["stdclass"].ToString() == readStd["stclass"].ToString())
                     {
-                        cmbStudentDep.Items.Add(readStd["deptname"].ToString());
-                        cmbStudentClass.Items.Add(readStd["stclass"].ToString());
+                        comboBox1.Items.Add(readStd["deptname"].ToString());
+                        comboBox3.Items.Add(readStd["stclass"].ToString());
                         break;
                     }
                 }
-                cmbStudentDep.SelectedIndex = 0;
-                cmbStudentClass.SelectedIndex = 0;
-                txtStudentName.Text = reader["perfname"].ToString();
-                txtStudentLName.Text = reader["perlname"].ToString();
-                cmbStudentGenre.Items.Add(reader["pergen"].ToString());
-                cmbStudentGenre.SelectedIndex = 0;
-                txtStudentPostCode.Text = reader["perpost"].ToString();
-                txtStudentAddress.Text = reader["peradd"].ToString();
-                dtpStudentBirthday.Value = Convert.ToDateTime(reader["perdob"]);
+                comboBox1.SelectedIndex = 0;
+                comboBox3.SelectedIndex = 0;
+                textBox2.Text = reader["perfname"].ToString();
+                textBox3.Text = reader["perlname"].ToString();
+                comboBox4.Items.Add(reader["pergen"].ToString());
+                comboBox4.SelectedIndex = 0;
+                textBox5.Text = reader["perpost"].ToString();
+                textBox4.Text = reader["peradd"].ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(reader["perdob"]);
 
             }
             else
             {
-                txtStudentId.Text = "";
-                txtStudentName.Text = "";
-                txtStudentLName.Text = "";
-                cmbStudentDep.Items.Clear();
-                cmbStudentClass.Items.Clear();
-                cmbStudentGenre.Items.Clear();
-                txtStudentAddress.Text = "";
-                txtStudentPostCode.Text = "";
-                dtpStudentBirthday.Value = DateTime.Now;
-                lblUDStudentID.ForeColor = System.Drawing.Color.Red;
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                comboBox1.Items.Clear();
+                comboBox3.Items.Clear();
+                comboBox4.Items.Clear();
+                textBox4.Text = "";
+                textBox5.Text = "";
+                dateTimePicker1.Value = DateTime.Now;
+                label13.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void cmbStudentClass_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void chkAddStudent_CheckedChanged(object sender, EventArgs e)
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
         {
             //Add check box
             if (chkAddStudent.Checked == true)
             {
-                cmbStudentDep.Items.Clear();
+                comboBox1.Items.Clear();
                 OleDbCommand com = new OleDbCommand();
                 com.Connection = con;
                 com.CommandText = "Select dname from department";
                 OleDbDataReader reDeptid = com.ExecuteReader();
                 while (reDeptid.Read())
                 {
-                    cmbStudentDep.Items.Add(reDeptid["dname"].ToString());
+                    comboBox1.Items.Add(reDeptid["dname"].ToString());
                 }
-                txtStudentId.Enabled = true;
-                txtStudentName.Enabled = true;
-                txtStudentLName.Enabled = true;
-                txtStudentAddress.Enabled = true;
-                txtStudentPostCode.Enabled = true;
-                cmbStudentDep.Items.Clear();
-                cmbStudentCourse.Items.Clear();
-                cmbStudentClass.Items.Clear();
-                cmbStudentGenre.Items.Clear();
+                textBox1.Enabled = true;
+                textBox2.Enabled = true;
+                textBox3.Enabled = true;
+                textBox4.Enabled = true;
+                textBox5.Enabled = true;
+                comboBox1.Items.Clear();
+                comboBox2.Items.Clear();
+                comboBox3.Items.Clear();
+                comboBox4.Items.Clear();
                 OleDbCommand com2 = new OleDbCommand();
                 com2.Connection = con;
                 com2.CommandText = "SELECT DNAME FROM DEPARTMENT";
                 OleDbDataReader dept = com2.ExecuteReader();
                 while (dept.Read())
                 {
-                    cmbStudentDep.Items.Add(dept["dname"].ToString());
+                    comboBox1.Items.Add(dept["dname"].ToString());
                 }
-                cmbStudentGenre.Items.Add("Male");
-                cmbStudentGenre.Items.Add("Female");
-                chkUpdateStudent.Checked = false;
-                chkSearchStudent.Checked = false;
-                chkDeleteStudent.Checked = false;
-                btnAddStudent.Enabled = true;
+                comboBox4.Items.Add("Male");
+                comboBox4.Items.Add("Female");
+                checkBox4.Checked = false;
+                checkBox5.Checked = false;
+                checkBox6.Checked = false;
+                button2.Enabled = true;
             }
             else
             {
-                btnAddStudent.Enabled = false;
+                button2.Enabled = false;
             }
 
             
         }
 
-        private void txtStudentPostCode_TextChanged(object sender, EventArgs e)
+        private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void txtStudentAddress_TextChanged(object sender, EventArgs e)
+        private void textBox4_TextChanged(object sender, EventArgs e)
         {
         }
 
-        private void lblSStudentID_Click(object sender, EventArgs e)
+        private void label15_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void cmbSStudentList_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
             //update combobox
-            txtStudentId.Enabled = false;
-            txtStudentName.Enabled = false;
-            txtStudentLName.Enabled = false;
-            txtStudentAddress.Enabled = false;
-            txtStudentPostCode.Enabled = false;
-            cmbStudentDep.Items.Clear();
-            cmbStudentCourse.Items.Clear();
-            cmbStudentClass.Items.Clear();
-            cmbStudentGenre.Items.Clear();
+            textBox1.Enabled = false;
+            textBox2.Enabled = false;
+            textBox3.Enabled = false;
+            textBox4.Enabled = false;
+            textBox5.Enabled = false;
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
+            comboBox4.Items.Clear();
             bool flag = false;
             OleDbCommand command1 = new OleDbCommand();
             command1.Connection = con;
@@ -809,7 +809,7 @@ namespace WindowsFormsApplication1
             OleDbDataReader reader = command1.ExecuteReader();
             while (reader.Read())
             {
-                if (cmbSStudentList.SelectedItem.ToString() == reader["personnum"].ToString())
+                if (comboBox6.SelectedItem.ToString() == reader["personnum"].ToString())
                 {
                     flag = true;
                     break;
@@ -817,8 +817,8 @@ namespace WindowsFormsApplication1
             }
             if (flag)
             {
-                lblUDStudentID.ForeColor = System.Drawing.Color.Green;
-                txtStudentId.Text = reader["personnum"].ToString();
+                label13.ForeColor = System.Drawing.Color.Green;
+                textBox1.Text = reader["personnum"].ToString();
                 //Student Department
                 OleDbCommand com2 = new OleDbCommand();
                 com2.Connection = con;
@@ -828,48 +828,48 @@ namespace WindowsFormsApplication1
                 {
                     if (reader["stdclass"].ToString() == readStd["stclass"].ToString())
                     {
-                        cmbStudentDep.Items.Add(readStd["deptname"].ToString());
-                        cmbStudentClass.Items.Add(readStd["stclass"].ToString());
+                        comboBox1.Items.Add(readStd["deptname"].ToString());
+                        comboBox3.Items.Add(readStd["stclass"].ToString());
                         break;
                     }
                 }
-                cmbStudentDep.SelectedIndex = 0;
-                cmbStudentClass.SelectedIndex = 0;
-                txtStudentName.Text = reader["perfname"].ToString();
-                txtStudentLName.Text = reader["perlname"].ToString();
-                cmbStudentGenre.Items.Add(reader["pergen"].ToString());
-                cmbStudentGenre.SelectedIndex = 0;
-                txtStudentPostCode.Text = reader["perpost"].ToString();
-                txtStudentAddress.Text = reader["peradd"].ToString();
-                dtpStudentBirthday.Value = Convert.ToDateTime(reader["perdob"]);
+                comboBox1.SelectedIndex = 0;
+                comboBox3.SelectedIndex = 0;
+                textBox2.Text = reader["perfname"].ToString();
+                textBox3.Text = reader["perlname"].ToString();
+                comboBox4.Items.Add(reader["pergen"].ToString());
+                comboBox4.SelectedIndex = 0;
+                textBox5.Text = reader["perpost"].ToString();
+                textBox4.Text = reader["peradd"].ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(reader["perdob"]);
 
             }
             else
             {
-                txtStudentId.Text = "";
-                txtStudentName.Text = "";
-                txtStudentLName.Text = "";
-                cmbStudentDep.Items.Clear();
-                cmbStudentClass.Items.Clear();
-                cmbStudentGenre.Items.Clear();
-                txtStudentAddress.Text = "";
-                txtStudentPostCode.Text = "";
-                dtpStudentBirthday.Value = DateTime.Now;
-                lblUDStudentID.ForeColor = System.Drawing.Color.Red;
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                comboBox1.Items.Clear();
+                comboBox3.Items.Clear();
+                comboBox4.Items.Clear();
+                textBox4.Text = "";
+                textBox5.Text = "";
+                dateTimePicker1.Value = DateTime.Now;
+                label13.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void btnUDStudent_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             OleDbCommand com = new OleDbCommand();
             com.Connection = con;
-            if (txtUDStudent.Text != "" || cmbUDStudentList.SelectedItem != null)
+            if (textBox6.Text != "" || comboBox5.SelectedItem != null)
             {
-                if (txtUDStudent.Enabled == true && cmbUDStudentList.Enabled == false)
+                if (textBox6.Enabled == true && comboBox5.Enabled == false)
                 {
                     try
                     {
-                        com.CommandText = "Update Person set fname ='" + txtStudentName.Text + "', lname ='" + txtStudentLName.Text + "', address ='" + txtStudentAddress.Text + "', postalcode = " + int.Parse(txtStudentPostCode.Text) + " where personid =" + int.Parse(txtStudentId.Text) + "";
+                        com.CommandText = "Update Person set fname ='" + textBox2.Text + "', lname ='" + textBox3.Text + "', address ='" + textBox4.Text + "', postalcode = " + int.Parse(textBox5.Text) + " where personid =" + int.Parse(textBox1.Text) + "";
                         com.ExecuteNonQuery();
                         MessageBox.Show("Successfully Updated");
                     }
@@ -882,7 +882,7 @@ namespace WindowsFormsApplication1
                 {
                     try
                     {
-                        com.CommandText = "Update Person set fname ='" + txtStudentName.Text + "', lname ='" + txtStudentLName.Text + "', address ='" + txtStudentAddress.Text + "', postalcode = " + int.Parse(txtStudentPostCode.Text) + " where personid =" + int.Parse(cmbUDStudentList.SelectedItem.ToString()) + "";
+                        com.CommandText = "Update Person set fname ='" + textBox2.Text + "', lname ='" + textBox3.Text + "', address ='" + textBox4.Text + "', postalcode = " + int.Parse(textBox5.Text) + " where personid =" + int.Parse(comboBox5.SelectedItem.ToString()) + "";
                         com.ExecuteNonQuery();
                         MessageBox.Show("Successfully Updated");
                     }
@@ -898,13 +898,13 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void cmbDStudentList_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtStudentId.Enabled = false;
-            cmbStudentDep.Items.Clear();
-            cmbStudentCourse.Items.Clear();
-            cmbStudentClass.Items.Clear();
-            cmbStudentGenre.Items.Clear();
+            textBox1.Enabled = false;
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
+            comboBox4.Items.Clear();
             bool flag = false;
             OleDbCommand command1 = new OleDbCommand();
             command1.Connection = con;
@@ -912,7 +912,7 @@ namespace WindowsFormsApplication1
             OleDbDataReader reader = command1.ExecuteReader();
             while (reader.Read())
             {
-                if (cmbDStudentList.SelectedItem.ToString() == reader["personnum"].ToString())
+                if (comboBox7.SelectedItem.ToString() == reader["personnum"].ToString())
                 {
                     flag = true;
                     break;
@@ -920,8 +920,8 @@ namespace WindowsFormsApplication1
             }
             if (flag)
             {
-                lblUDStudentID.ForeColor = System.Drawing.Color.Green;
-                txtStudentId.Text = reader["personnum"].ToString();
+                label13.ForeColor = System.Drawing.Color.Green;
+                textBox1.Text = reader["personnum"].ToString();
                 //Student Department
                 OleDbCommand com2 = new OleDbCommand();
                 com2.Connection = con;
@@ -931,38 +931,38 @@ namespace WindowsFormsApplication1
                 {
                     if (reader["stdclass"].ToString() == readStd["stclass"].ToString())
                     {
-                        cmbStudentDep.Items.Add(readStd["deptname"].ToString());
-                        cmbStudentClass.Items.Add(readStd["stclass"].ToString());
+                        comboBox1.Items.Add(readStd["deptname"].ToString());
+                        comboBox3.Items.Add(readStd["stclass"].ToString());
                         break;
                     }
                 }
-                cmbStudentDep.SelectedIndex = 0;
-                cmbStudentClass.SelectedIndex = 0;
-                txtStudentName.Text = reader["perfname"].ToString();
-                txtStudentLName.Text = reader["perlname"].ToString();
-                cmbStudentGenre.Items.Add(reader["pergen"].ToString());
-                cmbStudentGenre.SelectedIndex = 0;
-                txtStudentPostCode.Text = reader["perpost"].ToString();
-                txtStudentAddress.Text = reader["peradd"].ToString();
-                dtpStudentBirthday.Value = Convert.ToDateTime(reader["perdob"]);
+                comboBox1.SelectedIndex = 0;
+                comboBox3.SelectedIndex = 0;
+                textBox2.Text = reader["perfname"].ToString();
+                textBox3.Text = reader["perlname"].ToString();
+                comboBox4.Items.Add(reader["pergen"].ToString());
+                comboBox4.SelectedIndex = 0;
+                textBox5.Text = reader["perpost"].ToString();
+                textBox4.Text = reader["peradd"].ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(reader["perdob"]);
 
             }
             else
             {
-                txtStudentId.Text = "";
-                txtStudentName.Text = "";
-                txtStudentLName.Text = "";
-                cmbStudentDep.Items.Clear();
-                cmbStudentClass.Items.Clear();
-                cmbStudentGenre.Items.Clear();
-                txtStudentAddress.Text = "";
-                txtStudentPostCode.Text = "";
-                dtpStudentBirthday.Value = DateTime.Now;
-                lblUDStudentID.ForeColor = System.Drawing.Color.Red;
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                comboBox1.Items.Clear();
+                comboBox3.Items.Clear();
+                comboBox4.Items.Clear();
+                textBox4.Text = "";
+                textBox5.Text = "";
+                dateTimePicker1.Value = DateTime.Now;
+                label13.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void btnDStudent_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             OleDbCommand com1 = new OleDbCommand();
             OleDbCommand com2 = new OleDbCommand();
@@ -970,15 +970,15 @@ namespace WindowsFormsApplication1
             com3.Connection = con;
             com2.Connection = con;
             com1.Connection = con;
-            if (txtDStudentID.Text != "" || cmbDStudentList.SelectedItem != null)
+            if (textBox8.Text != "" || comboBox7.SelectedItem != null)
             {
-                if (txtDStudentID.Enabled == true && cmbDStudentList.Enabled == false)
+                if (textBox8.Enabled == true && comboBox7.Enabled == false)
                 {
                     try
                     {
-                        com3.CommandText = "Delete from Register where studentid =" + int.Parse(txtDStudentID.Text) + "";
-                        com1.CommandText = "Delete  from Student where studentid =" + int.Parse(txtDStudentID.Text) + "";
-                        com2.CommandText = "Delete  from Person where PersonId =" + int.Parse(txtDStudentID.Text) + "";
+                        com3.CommandText = "Delete from Register where studentid =" + int.Parse(textBox8.Text) + "";
+                        com1.CommandText = "Delete  from Student where studentid =" + int.Parse(textBox8.Text) + "";
+                        com2.CommandText = "Delete  from Person where PersonId =" + int.Parse(textBox8.Text) + "";
                         com3.ExecuteNonQuery();
                         com1.ExecuteNonQuery();
                         com2.ExecuteNonQuery();
@@ -993,9 +993,9 @@ namespace WindowsFormsApplication1
                 {
                     try
                     {
-                        com3.CommandText = "Delete from Register where studentid =" + int.Parse(cmbDStudentList.SelectedItem.ToString()) + "";
-                        com1.CommandText = "Delete  from Student where studentid =" + int.Parse(cmbDStudentList.SelectedItem.ToString()) + "";
-                        com2.CommandText = "Delete  from Person where PersonId =" + int.Parse(cmbDStudentList.SelectedItem.ToString()) + "";
+                        com3.CommandText = "Delete from Register where studentid =" + int.Parse(comboBox7.SelectedItem.ToString()) + "";
+                        com1.CommandText = "Delete  from Student where studentid =" + int.Parse(comboBox7.SelectedItem.ToString()) + "";
+                        com2.CommandText = "Delete  from Person where PersonId =" + int.Parse(comboBox7.SelectedItem.ToString()) + "";
                         com3.ExecuteNonQuery();
                         com1.ExecuteNonQuery();
                         com2.ExecuteNonQuery();

@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1
 
 
 
-        private void btnLogOut_Click(object sender, EventArgs e)
+        private void Back_Click(object sender, EventArgs e)
         {
             Login f = new Login();
             f.Show();
@@ -27,74 +27,74 @@ namespace WindowsFormsApplication1
         }
 
 
-        private void btnDepartment_MouseHover(object sender, EventArgs e)
+        private void button3_MouseHover(object sender, EventArgs e)
         {
-            btnDepartment.Image = Properties.Resources.button3_hover;
-            imgMessage.Text = "In Department form you can add a new Department, delete an existing record and update an existing record";
-            imgIcon.Image = Properties.Resources.Building_Clip_Art1;
+            button3.Image = Properties.Resources.button3_hover;
+            Message_show.Text = "In Department form you can add a new Department, delete an existing record and update an existing record";
+            icon_show.Image = Properties.Resources.Building_Clip_Art1;
         }
 
-        private void btnDepartment_MouseLeave(object sender, EventArgs e)
+        private void button3_MouseLeave(object sender, EventArgs e)
         {
-            btnDepartment.Image = Properties.Resources.button3_normal;
-            imgMessage.Text = "";
-            imgIcon.Image = null;
+            button3.Image = Properties.Resources.button3_normal;
+            Message_show.Text = "";
+            icon_show.Image = null;
         }
 
-        private void btnRegister_MouseHover(object sender, EventArgs e)
+        private void button4_MouseHover(object sender, EventArgs e)
         {
-            btnRegister.Image = Properties.Resources.button4_hover;
-            imgIcon.Image = Properties.Resources.registration1;
-            imgMessage.Text = "In Registration form you can register Students, delete an existing record and update an existing record";
+            button4.Image = Properties.Resources.button4_hover;
+            icon_show.Image = Properties.Resources.registration1;
+            Message_show.Text = "In Registration form you can register Students, delete an existing record and update an existing record";
         }
 
-        private void btnRegister_MouseLeave(object sender, EventArgs e)
+        private void button4_MouseLeave(object sender, EventArgs e)
         {
-            btnRegister.Image = Properties.Resources.button4_normal;
-            imgIcon.Image = null;
-            imgMessage.Text = "";
+            button4.Image = Properties.Resources.button4_normal;
+            icon_show.Image = null;
+            Message_show.Text = "";
         }
 
-        private void btnStudent_MouseHover(object sender, EventArgs e)
+        private void Button1_MouseHover(object sender, EventArgs e)
         {
-            btnStudent.Image = Properties.Resources.button1_hover;
-            imgIcon.Image = Properties.Resources.std;
-            imgMessage.Text = "In Student form you can add a new record, delete an existing record and update an existing record";
+            Button1.Image = Properties.Resources.button1_hover;
+            icon_show.Image = Properties.Resources.std;
+            Message_show.Text = "In Student form you can add a new record, delete an existing record and update an existing record";
         }
 
-        private void btnStudent_MouseLeave(object sender, EventArgs e)
+        private void Button1_MouseLeave(object sender, EventArgs e)
         {
-            btnStudent.Image = Properties.Resources.button1_normal;
-            imgMessage.Text = "";
-            imgIcon.Image = null;
+            Button1.Image = Properties.Resources.button1_normal;
+            Message_show.Text = "";
+            icon_show.Image = null;
         }
 
-        private void btnFaculty_MouseHover(object sender, EventArgs e)
+        private void button2_MouseHover(object sender, EventArgs e)
         {
-            btnFaculty.Image = Properties.Resources.button2_hover;
-            imgIcon.Image = Properties.Resources.sir;
-            imgMessage.Text = "In Faculty form you can add a new faculty member, delete an existing record and update an existing record";
+            button2.Image = Properties.Resources.button2_hover;
+            icon_show.Image = Properties.Resources.sir;
+            Message_show.Text = "In Faculty form you can add a new faculty member, delete an existing record and update an existing record";
         }
 
-        private void btnFaculty_MouseLeave(object sender, EventArgs e)
+        private void button2_MouseLeave(object sender, EventArgs e)
         {
-            btnFaculty.Image = Properties.Resources.button2_normal;
-            imgMessage.Text = "";
-            imgIcon.Image = null;
+            button2.Image = Properties.Resources.button2_normal;
+            Message_show.Text = "";
+            icon_show.Image = null;
         }
 
-        private void btnCourse_MouseHover(object sender, EventArgs e)
+        private void button6_MouseHover(object sender, EventArgs e)
         {
-            btnCourse.Image = Properties.Resources.button6_hover;
-            imgIcon.Image = Properties.Resources.books;
-            imgMessage.Text = "In Course form you can add a new course which is being offered, delete an existing record and update an existing record";
+            button6.Image = Properties.Resources.button6_hover;
+            icon_show.Image = Properties.Resources.books;
+            Message_show.Text = "In Course form you can add a new course which is being offered, delete an existing record and update an existing record";
         }
 
-        private void btnCourse_MouseLeave(object sender, EventArgs e)
+        private void button6_MouseLeave(object sender, EventArgs e)
         {
-            btnCourse.Image = Properties.Resources.button6_normal;
-            imgIcon.Image = null;
-            imgMessage.Text = "";
+            button6.Image = Properties.Resources.button6_normal;
+            icon_show.Image = null;
+            Message_show.Text = "";
         }
         public bool CheckForm(string  arr)
         {
@@ -109,7 +109,7 @@ namespace WindowsFormsApplication1
             }
             return flag;
         }
-        private void btnStudent_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             if (!CheckForm("student_data"))
             {
@@ -128,7 +128,7 @@ namespace WindowsFormsApplication1
         {
 
         }
-        private void btnFaculty_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             if (!CheckForm("Faculty"))
             {
@@ -139,7 +139,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void btnDepartment_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             if (!CheckForm("department"))
             {
@@ -161,7 +161,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void btnCourse_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
             if (!CheckForm("course"))
             {
