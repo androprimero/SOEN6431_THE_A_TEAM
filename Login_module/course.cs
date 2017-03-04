@@ -58,7 +58,7 @@ namespace WindowsFormsApplication1
                 textBox2.Enabled = true;
                 textBox3.Enabled = true;
                 //Add checkbox
-                checkBox7.Checked = false;
+                chkAddCoruse.Checked = false;
                 textBox6.Enabled = true;
                 checkBox1.Enabled = true;
                 comboBox5.Enabled = false;
@@ -91,7 +91,7 @@ namespace WindowsFormsApplication1
             {
 
                 //Add checkbox
-                checkBox7.Checked = false;
+                chkAddCoruse.Checked = false;
                 textBox7.Enabled = true;
                 checkBox2.Enabled = true;
                 comboBox6.Enabled = false;
@@ -128,7 +128,7 @@ namespace WindowsFormsApplication1
 
 
                 //Add checkbox
-                checkBox7.Checked = false;
+                chkAddCoruse.Checked = false;
                 textBox8.Enabled = true;
                 comboBox7.Enabled = false;
                 button4.Enabled = true;
@@ -448,7 +448,7 @@ namespace WindowsFormsApplication1
 
         private void checkBox7_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox7.Checked == true)
+            if (chkAddCoruse.Checked == true)
             {
                 comboBox1.Items.Clear();
                 OleDbCommand com = new OleDbCommand();
