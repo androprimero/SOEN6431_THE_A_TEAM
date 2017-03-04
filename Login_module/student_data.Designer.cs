@@ -70,7 +70,7 @@
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.chkAddStudent = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -516,19 +516,19 @@
             this.label5.TabIndex = 46;
             this.label5.Text = "Class: ";
             // 
-            // checkBox7
+            // chkAddStudent
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBox7.Location = new System.Drawing.Point(112, 0);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(48, 17);
-            this.checkBox7.TabIndex = 47;
-            this.checkBox7.Text = "Add";
-            this.checkBox7.UseVisualStyleBackColor = false;
-            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
+            this.chkAddStudent.AutoSize = true;
+            this.chkAddStudent.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.chkAddStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAddStudent.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chkAddStudent.Location = new System.Drawing.Point(112, 0);
+            this.chkAddStudent.Name = "chkAddStudent";
+            this.chkAddStudent.Size = new System.Drawing.Size(48, 17);
+            this.chkAddStudent.TabIndex = 47;
+            this.chkAddStudent.Text = "Add";
+            this.chkAddStudent.UseVisualStyleBackColor = false;
+            this.chkAddStudent.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
             // 
             // student_data
             // 
@@ -536,7 +536,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Student_form_data;
             this.ClientSize = new System.Drawing.Size(600, 775);
-            this.Controls.Add(this.checkBox7);
+            this.Controls.Add(this.chkAddStudent);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.checkBox6);
@@ -633,6 +633,6 @@
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox chkAddStudent;
     }
 }

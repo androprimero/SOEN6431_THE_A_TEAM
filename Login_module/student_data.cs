@@ -63,7 +63,7 @@ namespace WindowsFormsApplication1
                 textBox4.Enabled = true;
                 textBox5.Enabled = true;
                 //Add checkbox
-                checkBox7.Checked = false;  
+                chkAddStudent.Checked = false;  
                 textBox6.Enabled = true;
                 checkBox1.Enabled = true;
                 comboBox5.Enabled = false;
@@ -104,7 +104,7 @@ namespace WindowsFormsApplication1
             {
 
                 //Add checkbox
-                checkBox7.Checked = false;  
+                chkAddStudent.Checked = false;  
                 textBox7.Enabled = true;
                 checkBox2.Enabled = true;
                 comboBox6.Enabled = false;
@@ -143,7 +143,7 @@ namespace WindowsFormsApplication1
                
 
                 //Add checkbox
-                checkBox7.Checked = false;  
+                chkAddStudent.Checked = false;  
                 textBox8.Enabled = true;
                 comboBox7.Enabled = false;
                 button4.Enabled = true;
@@ -733,7 +733,7 @@ namespace WindowsFormsApplication1
         private void checkBox7_CheckedChanged(object sender, EventArgs e)
         {
             //Add check box
-            if (checkBox7.Checked == true)
+            if (chkAddStudent.Checked == true)
             {
                 comboBox1.Items.Clear();
                 OleDbCommand com = new OleDbCommand();
