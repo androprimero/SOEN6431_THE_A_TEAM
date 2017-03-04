@@ -176,7 +176,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                MessageBox.Show("Enter Values");
+                MessageBox.Show("Enter Missing Values");
             }
             
         }
