@@ -19,143 +19,139 @@ namespace WindowsFormsApplication1
         }
         //Global Variable
         public OleDbConnection con = new OleDbConnection();
-        
+
+
+
         private void faculty_Load(object sender, EventArgs e)
         {
             string currentDir = Directory.GetCurrentDirectory();
             string dbDir = Directory.GetParent(Directory.GetParent(currentDir).FullName).FullName;
             con.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbDir + @"\\university.accdb;Persist Security Info=False";
             con.Open();
-            button2.Enabled = false;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            
-            comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox5.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox6.DropDownStyle = ComboBoxStyle.DropDownList;
+            btnAddFaculty.Enabled = false;
+            cmbOffice.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            cmbGender.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbUpdateFacultyChooseFromList.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSearchFacultyChooseFromList.DropDownStyle = ComboBoxStyle.DropDownList;
             //Update
-            textBox6.Enabled = false;
-            checkBox1.Enabled = false;
-            comboBox5.Enabled = false;
-            button1.Enabled = false;
+            txtUpdateFacultyId.Enabled = false;
+            chkUpdateFacultyChooseFromList.Enabled = false;
+            cmbUpdateFacultyChooseFromList.Enabled = false;
+            btnUpdateFaculty.Enabled = false;
             //Search
-            textBox7.Enabled = false;
-            checkBox2.Enabled = false;
-            comboBox6.Enabled = false;
+            txtSearchFacultyId.Enabled = false;
+            chkSearchFacultyChooseFromList.Enabled = false;
+            cmbSearchFacultyChooseFromList.Enabled = false;
         }
 
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+
+        #region "Faculty Form Functionality Options"
+
+
+        private void chkAddFaculty_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox4.Checked == true)
+            if (chkAddFaculty.Checked)
+            {
+                cmbOffice.Items.Clear();
+                btnAddFaculty.Enabled = true;
+                txtFacultyId.Enabled = true;
+                txtFirstName.Enabled = true;
+                txtLastName.Enabled = true;
+                txtAddress.Enabled = true;
+                txtPostalCode.Enabled = true;
+                txtSalary.Enabled = true;
+                txtContactNo.Enabled = true;
+                cmbGender.Items.Clear();
+                cmbGender.Items.Add("Male");
+                cmbGender.Items.Add("Female");
+                OleDbCommand com = new OleDbCommand();
+                com.Connection = con;
+                com.CommandText = "select dname from department";
+
+                OleDbDataReader Fread = com.ExecuteReader();
+                while (Fread.Read())
+                {
+                    cmbOffice.Items.Add(Fread["dname"].ToString());
+                }
+                chkUpdateFaculty.Checked = false;
+                chkSearchFaculty.Checked = false;
+            }
+            else
+            {
+                cmbOffice.Items.Clear();
+                btnAddFaculty.Enabled = false;
+            }
+        }
+
+        private void chkUpdateFaculty_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkUpdateFaculty.Checked == true)
             {
                 //Add checkbox
-                checkBox7.Checked = false;
-                textBox6.Enabled = true;
-                checkBox1.Enabled = true;
-                comboBox5.Enabled = false;
-                button1.Enabled = true;
+                chkAddFaculty.Checked = false;
+                txtUpdateFacultyId.Enabled = true;
+                chkUpdateFacultyChooseFromList.Enabled = true;
+                cmbUpdateFacultyChooseFromList.Enabled = false;
+                btnUpdateFaculty.Enabled = true;
                 //Search
-                textBox7.Enabled = false;
-                checkBox2.Enabled = false;
-                comboBox6.Enabled = false;
+                txtSearchFacultyId.Enabled = false;
+                chkSearchFacultyChooseFromList.Enabled = false;
+                cmbSearchFacultyChooseFromList.Enabled = false;
                 //Check boxes
-                checkBox5.Checked = false;
+                chkSearchFaculty.Checked = false;
             }
             else
             {
-                textBox6.Enabled = false;
-                checkBox1.Enabled = false;
-                comboBox5.Enabled = false;
-                button1.Enabled = false;
+                txtUpdateFacultyId.Enabled = false;
+                chkUpdateFacultyChooseFromList.Enabled = false;
+                cmbUpdateFacultyChooseFromList.Enabled = false;
+                btnUpdateFaculty.Enabled = false;
             }
         }
 
-        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+
+        private void chkSearchFaculty_CheckedChanged(object sender, EventArgs e)
         {
             //Search
-            if (checkBox5.Checked == true)
+            if (chkSearchFaculty.Checked == true)
             {
                 //Add checkbox
-                checkBox7.Checked = false;
-                textBox7.Enabled = true;
-                checkBox2.Enabled = true;
-                comboBox6.Enabled = false;
+                chkAddFaculty.Checked = false;
+                txtSearchFacultyId.Enabled = true;
+                chkSearchFacultyChooseFromList.Enabled = true;
+                cmbSearchFacultyChooseFromList.Enabled = false;
                 //Update
-                textBox6.Enabled = false;
-                checkBox1.Enabled = false;
-                comboBox5.Enabled = false;
-                button1.Enabled = false;
-                checkBox4.Checked = false;
+                txtUpdateFacultyId.Enabled = false;
+                chkUpdateFacultyChooseFromList.Enabled = false;
+                cmbUpdateFacultyChooseFromList.Enabled = false;
+                btnUpdateFaculty.Enabled = false;
+                chkUpdateFaculty.Checked = false;
             }
             else
             {
 
-                textBox7.Enabled = false;
-                checkBox2.Enabled = false;
-                comboBox6.Enabled = false;
+                txtSearchFacultyId.Enabled = false;
+                chkSearchFacultyChooseFromList.Enabled = false;
+                cmbSearchFacultyChooseFromList.Enabled = false;
             }
         }
+        #endregion
 
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+
+        #region "Add Faculty"
+
+        private void btnAddFaculty_Click(object sender, EventArgs e)
         {
-            comboBox5.Items.Clear();
-            if (checkBox1.Checked == true)
-            {
-                //Check box with database
-                OleDbCommand command1 = new OleDbCommand();
-                command1.Connection = con;
-                command1.CommandText = "SELECT p.PersonId as personnum  FROM PERSON p, faculty f where p.PersonId = f.facultyid";
-                OleDbDataReader reader = command1.ExecuteReader();
-                while (reader.Read())
-                {
-                    comboBox5.Items.Add(reader["personnum"].ToString());
-                }
-                //Update Checkbox
-                textBox6.Enabled = false;
-                comboBox5.Enabled = true;
-            }
-            else
-            {
-                textBox6.Enabled = true;
-                comboBox5.Enabled = false;
-            }
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            comboBox6.Items.Clear();
-            if (checkBox2.Checked == true)
-            {
-                //Check box with database
-                OleDbCommand command1 = new OleDbCommand();
-                command1.Connection = con;
-                command1.CommandText = "SELECT p.PersonId as personnum  FROM PERSON p, faculty f where p.PersonId = f.facultyid";
-                OleDbDataReader reader = command1.ExecuteReader();
-                while (reader.Read())
-                {
-                    comboBox6.Items.Add(reader["personnum"].ToString());
-                }
-                //Search Checkbox
-                textBox7.Enabled = false;
-                comboBox6.Enabled = true;
-            }
-            else
-            {
-                textBox7.Enabled = true;
-                comboBox6.Enabled = false;
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string fId = textBox1.Text;
-            string fname = textBox2.Text;
-            string lname = textBox3.Text;
-            string address = textBox4.Text;
-            string postalCode = textBox5.Text;
-            string fcon = textBox9.Text;
-            string fsal = textBox10.Text;
-            if (fId != "" && fname != "" && lname != "" && address != "" && postalCode != "" && fcon != "" && fsal != "" && comboBox4.SelectedItem != null && dateTimePicker1.Value != null && comboBox1.SelectedItem != null)
+            string fId = txtFacultyId.Text;
+            string fname = txtFirstName.Text;
+            string lname = txtLastName.Text;
+            string address = txtAddress.Text;
+            string postalCode = txtPostalCode.Text;
+            string fcon = txtContactNo.Text;
+            string fsal = txtSalary.Text;
+            if (fId != "" && fname != "" && lname != "" && address != "" && postalCode != "" && fcon != "" && fsal != "" && cmbGender.SelectedItem != null && dtpDoB.Value != null && cmbOffice.SelectedItem != null)
             {
                 OleDbCommand com1 = new OleDbCommand();
                 OleDbCommand com2 = new OleDbCommand();
@@ -163,8 +159,8 @@ namespace WindowsFormsApplication1
                 com2.Connection = con;
                 try
                 {
-                    com1.CommandText = "Insert into person(personId,fname,lname,dob,postalcode,gender,address) values(" + fId + ",'" + fname + "','" + lname + "'," + dateTimePicker1.Value.ToString("mm-dd-yyyy") + "," + postalCode + ",'" + comboBox4.SelectedItem.ToString() + "','" + address + "')";
-                    com2.CommandText = "Insert into faculty(facultyid, office, salary, contactNo) values(" + fId + ",'" + comboBox1.SelectedItem.ToString() + "'," + long.Parse(textBox10.Text) + "," + long.Parse(textBox9.Text) + ")";
+                    com1.CommandText = "Insert into person(personId,fname,lname,dob,postalcode,gender,address) values(" + fId + ",'" + fname + "','" + lname + "'," + dtpDoB.Value.ToString("mm-dd-yyyy") + "," + postalCode + ",'" + cmbGender.SelectedItem.ToString() + "','" + address + "')";
+                    com2.CommandText = "Insert into faculty(facultyid, office, salary, contactNo) values(" + fId + ",'" + cmbOffice.SelectedItem.ToString() + "'," + long.Parse(txtSalary.Text) + "," + long.Parse(txtContactNo.Text) + ")";
                     com1.ExecuteNonQuery();
                     com2.ExecuteNonQuery();
                     MessageBox.Show("Successfully Added");
@@ -178,29 +174,30 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Enter Missing Values");
             }
-            
+
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
+
+        private void txtFacultyId_Leave(object sender, EventArgs e)
         {
-            string input = textBox1.Text;
+            string input = txtFacultyId.Text;
             try
             {
                 long id = long.Parse(input);
-                label2.ForeColor = System.Drawing.Color.Green;
+                lblFacultyId.ForeColor = System.Drawing.Color.Green;
             }
             catch
             {
-                textBox1.Focus();
-                label2.ForeColor = System.Drawing.Color.Red;
+                txtFacultyId.Focus();
+                lblFacultyId.ForeColor = System.Drawing.Color.Red;
             }
-        
+
         }
 
-        private void textBox2_Leave(object sender, EventArgs e)
+        private void txtFirstName_Leave(object sender, EventArgs e)
         {
 
-            string input = textBox2.Text;
+            string input = txtFirstName.Text;
             int count = 0;
             if (input.Length > 3)
             {
@@ -211,25 +208,25 @@ namespace WindowsFormsApplication1
                 }
                 if (count == input.Length)
                 {
-                    label6.ForeColor = System.Drawing.Color.Green;
+                    lblFirstName.ForeColor = System.Drawing.Color.Green;
                 }
                 else
                 {
-                    textBox2.Focus();
-                    label6.ForeColor = System.Drawing.Color.Red;
+                    txtFirstName.Focus();
+                    lblFirstName.ForeColor = System.Drawing.Color.Red;
                 }
             }
             else
             {
-                textBox2.Focus();
-                label6.ForeColor = System.Drawing.Color.Red;
+                txtFirstName.Focus();
+                lblFirstName.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void textBox3_Leave(object sender, EventArgs e)
+        private void txtLastName_Leave(object sender, EventArgs e)
         {
 
-            string input = textBox3.Text;
+            string input = txtLastName.Text;
             int count = 0;
             if (input.Length > 3)
             {
@@ -240,201 +237,56 @@ namespace WindowsFormsApplication1
                 }
                 if (count == input.Length)
                 {
-                    label7.ForeColor = System.Drawing.Color.Green;
+                    lblLastName.ForeColor = System.Drawing.Color.Green;
                 }
                 else
                 {
-                    textBox3.Focus();
-                    label7.ForeColor = System.Drawing.Color.Red;
+                    txtLastName.Focus();
+                    lblLastName.ForeColor = System.Drawing.Color.Red;
                 }
             }
 
             else
             {
-                textBox3.Focus();
-                label7.ForeColor = System.Drawing.Color.Red;
+                txtLastName.Focus();
+                lblLastName.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void textBox9_Leave(object sender, EventArgs e)
+        private void txtContactNo_Leave(object sender, EventArgs e)
         {
-            string input = textBox9.Text;
+            string input = txtContactNo.Text;
             try
             {
                 long id = long.Parse(input);
-                label5.ForeColor = System.Drawing.Color.Green;
+                lblContactNo.ForeColor = System.Drawing.Color.Green;
             }
             catch
             {
-                textBox9.Focus();
-                label5.ForeColor = System.Drawing.Color.Red;
+                txtContactNo.Focus();
+                lblContactNo.ForeColor = System.Drawing.Color.Red;
             }
-        
+
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-            //Check box with database
-            textBox1.Enabled = false;
-            comboBox1.Items.Clear();
-            comboBox4.Items.Clear();
-            bool flag = false;
-            OleDbCommand command1 = new OleDbCommand();
-            command1.Connection = con;
-            command1.CommandText = "SELECT p.PersonId as personnum, p.fname as perfname, p.lname as perlname, p.gender as pergen, p.dob as perdob, p.postalcode as perpost, p.address as peradd, f.salary as fSal, f.contactNo as fCon, f.office as foffice  FROM PERSON p, Faculty f where p.PersonId = f.facultyid";
-            OleDbDataReader reader = command1.ExecuteReader();
-            while (reader.Read())
-            {
-                if (textBox6.Text == reader["personnum"].ToString())
-                {
-                    flag = true;
-                    break;
-                }
-            }
-            if (flag)
-            {
-                label13.ForeColor = System.Drawing.Color.Green;
-                textBox1.Text = reader["personnum"].ToString();
-                textBox2.Text = reader["perfname"].ToString();
-                textBox3.Text = reader["perlname"].ToString();
-                comboBox1.Items.Add(reader["foffice"].ToString());
-                comboBox4.Items.Add(reader["pergen"].ToString());
-                comboBox4.SelectedIndex = 0;
-                comboBox1.SelectedIndex = 0;
-                textBox5.Text = reader["perpost"].ToString();
-                textBox4.Text = reader["peradd"].ToString();
-                dateTimePicker1.Value = Convert.ToDateTime(reader["perdob"]);
-                textBox9.Text = reader["fCon"].ToString();
-                textBox10.Text = reader["fSal"].ToString(); 
 
+        private void txtAddress_Leave(object sender, EventArgs e)
+        {
+            if (txtAddress.Text == "")
+            {
+                txtAddress.Focus();
+                lblAddress.ForeColor = System.Drawing.Color.Red;
             }
             else
             {
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                comboBox4.Items.Clear();
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox10.Text = "";
-                textBox9.Text = "";
-                dateTimePicker1.Value = DateTime.Now;
-                label13.ForeColor = System.Drawing.Color.Red;
+                lblAddress.ForeColor = System.Drawing.Color.Green;
             }
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-            //Check box with database
-            textBox1.Enabled = false;
-            textBox2.Enabled = false;
-            textBox3.Enabled = false;
-            textBox4.Enabled = false;
-            textBox5.Enabled = false;
-            textBox9.Enabled = false;
-            textBox10.Enabled = false;
-  
-            comboBox1.Items.Clear();
-            comboBox4.Items.Clear();
-            bool flag = false;
-            OleDbCommand command1 = new OleDbCommand();
-            command1.Connection = con;
-            command1.CommandText = "SELECT p.PersonId as personnum, p.fname as perfname, p.lname as perlname, p.gender as pergen, p.dob as perdob, p.postalcode as perpost, p.address as peradd, f.salary as fSal, f.contactNo as fCon, f.office as foffice  FROM PERSON p, Faculty f where p.PersonId = f.facultyid";
-            OleDbDataReader reader = command1.ExecuteReader();
-            while (reader.Read())
-            {
-                if (textBox7.Text == reader["personnum"].ToString())
-                {
-                    flag = true;
-                    break;
-                }
-            }
-            if (flag)
-            {
-                label15.ForeColor = System.Drawing.Color.Green;
-                textBox1.Text = reader["personnum"].ToString();
-                textBox2.Text = reader["perfname"].ToString();
-                textBox3.Text = reader["perlname"].ToString();
-                comboBox1.Items.Add(reader["foffice"].ToString());
-                comboBox4.Items.Add(reader["pergen"].ToString());
-                comboBox4.SelectedIndex = 0;
-                comboBox1.SelectedIndex = 0;
-                textBox5.Text = reader["perpost"].ToString();
-                textBox4.Text = reader["peradd"].ToString();
-                dateTimePicker1.Value = Convert.ToDateTime(reader["perdob"]);
-                textBox9.Text = reader["fCon"].ToString();
-                textBox10.Text = reader["fSal"].ToString();
-
-            }
-            else
-            {
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                comboBox4.Items.Clear();
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox10.Text = "";
-                textBox9.Text = "";
-                dateTimePicker1.Value = DateTime.Now;
-                label15.ForeColor = System.Drawing.Color.Red;
-            }
-        }
-
-       
-
-        private void checkBox7_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox7.Checked)
-            {
-                comboBox1.Items.Clear();
-                button2.Enabled = true;
-                textBox1.Enabled = true;
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
-                textBox4.Enabled = true;
-                textBox5.Enabled = true;
-                textBox10.Enabled = true;
-                textBox9.Enabled = true;
-                comboBox4.Items.Clear();
-                comboBox4.Items.Add("Male");
-                comboBox4.Items.Add("Female");
-                OleDbCommand com = new OleDbCommand();
-                com.Connection = con;
-                com.CommandText = "select dname from department";
-
-                OleDbDataReader Fread = com.ExecuteReader();
-                while (Fread.Read())
-                {
-                    comboBox1.Items.Add(Fread["dname"].ToString());
-                }
-                checkBox4.Checked = false;
-                checkBox5.Checked = false;
-            }
-            else
-            {
-                comboBox1.Items.Clear();
-                button2.Enabled = false;
-            }
-        }
-
-        private void textBox4_Leave(object sender, EventArgs e)
-        {
-            if (textBox4.Text == "")
-            {
-                textBox4.Focus();
-                label10.ForeColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                label10.ForeColor = System.Drawing.Color.Green;
-            }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtFacultyId_TextChanged(object sender, EventArgs e)
         {
             bool flag = false;
-            string input = textBox1.Text;
+            string input = txtFacultyId.Text;
             try
             {
                 int id = int.Parse(input);
@@ -452,55 +304,48 @@ namespace WindowsFormsApplication1
                 }
                 if (!flag)
                 {
-                    label2.ForeColor = System.Drawing.Color.Green;
+                    lblFacultyId.ForeColor = System.Drawing.Color.Green;
                 }
                 else
                 {
-                    label2.ForeColor = System.Drawing.Color.Red;
+                    lblFacultyId.ForeColor = System.Drawing.Color.Red;
                 }
             }
             catch
             {
-                label2.ForeColor = System.Drawing.Color.Red;
+                lblFacultyId.ForeColor = System.Drawing.Color.Red;
             }
-            
+
         }
 
-        private void textBox5_Leave(object sender, EventArgs e)
+        private void txtPostalCode_Leave(object sender, EventArgs e)
         {
-            string input = textBox5.Text;
+            string input = txtPostalCode.Text;
             try
             {
                 long id = long.Parse(input);
-                label11.ForeColor = System.Drawing.Color.Green;
+                lblPostalCode.ForeColor = System.Drawing.Color.Green;
             }
             catch
             {
-                textBox5.Focus();
-                label11.ForeColor = System.Drawing.Color.Red;
+                txtPostalCode.Focus();
+                lblPostalCode.ForeColor = System.Drawing.Color.Red;
             }
-        
-        
-        }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
 
-        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        #endregion
+
+
+        #region "Update Faculty"
+
+        private void txtUpdateFacultyId_TextChanged(object sender, EventArgs e)
         {
             //Check box with database
-            textBox1.Enabled = false;
-            textBox2.Enabled = true;
-            textBox3.Enabled = true;
-            textBox4.Enabled = true;
-            textBox5.Enabled = true;
-            textBox9.Enabled = true;
-            textBox10.Enabled = true;
-
-            comboBox1.Items.Clear();
-            comboBox4.Items.Clear();
+            txtFacultyId.Enabled = false;
+            cmbOffice.Items.Clear();
+            cmbGender.Items.Clear();
             bool flag = false;
             OleDbCommand command1 = new OleDbCommand();
             command1.Connection = con;
@@ -508,7 +353,7 @@ namespace WindowsFormsApplication1
             OleDbDataReader reader = command1.ExecuteReader();
             while (reader.Read())
             {
-                if (comboBox5.SelectedItem.ToString() == reader["personnum"].ToString())
+                if (txtUpdateFacultyId.Text == reader["personnum"].ToString())
                 {
                     flag = true;
                     break;
@@ -516,38 +361,50 @@ namespace WindowsFormsApplication1
             }
             if (flag)
             {
-                label13.ForeColor = System.Drawing.Color.Green;
-                textBox1.Text = reader["personnum"].ToString();
-                textBox2.Text = reader["perfname"].ToString();
-                textBox3.Text = reader["perlname"].ToString();
-                comboBox4.Items.Add(reader["pergen"].ToString());
-                comboBox4.SelectedIndex = 0;
-                comboBox1.Items.Add(reader["foffice"].ToString());
-                comboBox1.SelectedIndex = 0;
-                textBox5.Text = reader["perpost"].ToString();
-                textBox4.Text = reader["peradd"].ToString();
-                dateTimePicker1.Value = Convert.ToDateTime(reader["perdob"]);
-                textBox9.Text = reader["fCon"].ToString();
-                textBox10.Text = reader["fSal"].ToString();
+                lblUpdateFacultyId.ForeColor = System.Drawing.Color.Green;
+                txtFacultyId.Text = reader["personnum"].ToString();
+                txtFirstName.Text = reader["perfname"].ToString();
+                txtLastName.Text = reader["perlname"].ToString();
+                cmbOffice.Items.Add(reader["foffice"].ToString());
+                cmbGender.Items.Add(reader["pergen"].ToString());
+                cmbGender.SelectedIndex = 0;
+                cmbOffice.SelectedIndex = 0;
+                txtPostalCode.Text = reader["perpost"].ToString();
+                txtAddress.Text = reader["peradd"].ToString();
+                dtpDoB.Value = Convert.ToDateTime(reader["perdob"]);
+                txtContactNo.Text = reader["fCon"].ToString();
+                txtSalary.Text = reader["fSal"].ToString();
 
+            }
+            else
+            {
+                txtFacultyId.Text = "";
+                txtFirstName.Text = "";
+                txtLastName.Text = "";
+                cmbGender.Items.Clear();
+                txtAddress.Text = "";
+                txtPostalCode.Text = "";
+                txtSalary.Text = "";
+                txtContactNo.Text = "";
+                dtpDoB.Value = DateTime.Now;
+                lblUpdateFacultyId.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void cmbUpdateFacultyChooseFromList_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Check box with database
-            textBox1.Enabled = false;
-            textBox2.Enabled = false;
-            textBox3.Enabled = false;
-            textBox4.Enabled = false;
-            textBox5.Enabled = false;
-            textBox9.Enabled = false;
-            textBox10.Enabled = false;
+            txtFacultyId.Enabled = false;
+            txtFirstName.Enabled = true;
+            txtLastName.Enabled = true;
+            txtAddress.Enabled = true;
+            txtPostalCode.Enabled = true;
+            txtContactNo.Enabled = true;
+            txtSalary.Enabled = true;
 
-            //Check box with database
-            textBox1.Enabled = false;
-            comboBox1.Items.Clear();
-            comboBox4.Items.Clear();
+            cmbOffice.Items.Clear();
+            cmbGender.Items.Clear();
             bool flag = false;
             OleDbCommand command1 = new OleDbCommand();
             command1.Connection = con;
@@ -555,7 +412,7 @@ namespace WindowsFormsApplication1
             OleDbDataReader reader = command1.ExecuteReader();
             while (reader.Read())
             {
-                if (comboBox6.SelectedItem.ToString() == reader["personnum"].ToString())
+                if (cmbUpdateFacultyChooseFromList.SelectedItem.ToString() == reader["personnum"].ToString())
                 {
                     flag = true;
                     break;
@@ -563,52 +420,172 @@ namespace WindowsFormsApplication1
             }
             if (flag)
             {
-                label15.ForeColor = System.Drawing.Color.Green;
-                textBox1.Text = reader["personnum"].ToString();
-                textBox2.Text = reader["perfname"].ToString();
-                textBox3.Text = reader["perlname"].ToString();
-                comboBox4.Items.Add(reader["pergen"].ToString());
-                comboBox4.SelectedIndex = 0;
-                comboBox1.Items.Add(reader["foffice"].ToString());
-                comboBox1.SelectedIndex = 0;
-                textBox5.Text = reader["perpost"].ToString();
-                textBox4.Text = reader["peradd"].ToString();
-                dateTimePicker1.Value = Convert.ToDateTime(reader["perdob"]);
-                textBox9.Text = reader["fCon"].ToString();
-                textBox10.Text = reader["fSal"].ToString();
+                lblUpdateFacultyId.ForeColor = System.Drawing.Color.Green;
+                txtFacultyId.Text = reader["personnum"].ToString();
+                txtFirstName.Text = reader["perfname"].ToString();
+                txtLastName.Text = reader["perlname"].ToString();
+                cmbGender.Items.Add(reader["pergen"].ToString());
+                cmbGender.SelectedIndex = 0;
+                cmbOffice.Items.Add(reader["foffice"].ToString());
+                cmbOffice.SelectedIndex = 0;
+                txtPostalCode.Text = reader["perpost"].ToString();
+                txtAddress.Text = reader["peradd"].ToString();
+                dtpDoB.Value = Convert.ToDateTime(reader["perdob"]);
+                txtContactNo.Text = reader["fCon"].ToString();
+                txtSalary.Text = reader["fSal"].ToString();
 
             }
-        
         }
 
-        
-        private void button1_Click(object sender, EventArgs e)
+        private void btnUpdateFaculty_Click(object sender, EventArgs e)
         {
-                OleDbCommand com1 = new OleDbCommand();
-                OleDbCommand com2 = new OleDbCommand();
-                com1.Connection = con;
-                com2.Connection = con;
-                if (textBox6.Text != "" || comboBox5.SelectedItem != null)
+            OleDbCommand com1 = new OleDbCommand();
+            OleDbCommand com2 = new OleDbCommand();
+            com1.Connection = con;
+            com2.Connection = con;
+            if (txtUpdateFacultyId.Text != "" || cmbUpdateFacultyChooseFromList.SelectedItem != null)
+            {
+                try
                 {
-                    try
-                    {
-                        com1.CommandText = "Update Person set fname ='" + textBox2.Text + "', lname ='" + textBox3.Text + "', address ='" + textBox4.Text + "', postalcode = " + int.Parse(textBox5.Text) + " where personid =" + int.Parse(textBox1.Text) + "";
-                        com2.CommandText = "Update Faculty set salary = " + long.Parse(textBox10.Text) + ", contactNo = " + long.Parse(textBox9.Text) + " where facultyid =" + int.Parse(textBox1.Text) + "";
-                        com1.ExecuteNonQuery();
-                        com2.ExecuteNonQuery();
-                        MessageBox.Show("Successfully Updated");
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Can not be updated");
-                    }
+                    com1.CommandText = "Update Person set fname ='" + txtFirstName.Text + "', lname ='" + txtLastName.Text + "', address ='" + txtAddress.Text + "', postalcode = " + int.Parse(txtPostalCode.Text) + " where personid =" + int.Parse(txtFacultyId.Text) + "";
+                    com2.CommandText = "Update Faculty set salary = " + long.Parse(txtSalary.Text) + ", contactNo = " + long.Parse(txtContactNo.Text) + " where facultyid =" + int.Parse(txtFacultyId.Text) + "";
+                    com1.ExecuteNonQuery();
+                    com2.ExecuteNonQuery();
+                    MessageBox.Show("Successfully Updated");
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Enter Values");
+                    MessageBox.Show("Can not be updated");
                 }
-            
+            }
+            else
+            {
+                MessageBox.Show("Enter Values");
+            }
+
         }
+
+        private void chkUpdateFacultyChooseFromList_CheckedChanged(object sender, EventArgs e)
+        {
+            cmbUpdateFacultyChooseFromList.Items.Clear();
+            if (chkUpdateFacultyChooseFromList.Checked == true)
+            {
+                //Check box with database
+                OleDbCommand command1 = new OleDbCommand();
+                command1.Connection = con;
+                command1.CommandText = "SELECT p.PersonId as personnum  FROM PERSON p, faculty f where p.PersonId = f.facultyid";
+                OleDbDataReader reader = command1.ExecuteReader();
+                while (reader.Read())
+                {
+                    cmbUpdateFacultyChooseFromList.Items.Add(reader["personnum"].ToString());
+                }
+                //Update Checkbox
+                txtUpdateFacultyId.Enabled = false;
+                cmbUpdateFacultyChooseFromList.Enabled = true;
+            }
+            else
+            {
+                txtUpdateFacultyId.Enabled = true;
+                cmbUpdateFacultyChooseFromList.Enabled = false;
+            }
+        }
+
+        #endregion
+
+
+        #region "Search Faculty"
+
+        private void cmbSearchFacultyChooseFromList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkSearchFacultyChooseFromList_CheckedChanged(object sender, EventArgs e)
+        {
+            cmbSearchFacultyChooseFromList.Items.Clear();
+            if (chkSearchFacultyChooseFromList.Checked == true)
+            {
+                //Check box with database
+                OleDbCommand command1 = new OleDbCommand();
+                command1.Connection = con;
+                command1.CommandText = "SELECT p.PersonId as personnum  FROM PERSON p, faculty f where p.PersonId = f.facultyid";
+                OleDbDataReader reader = command1.ExecuteReader();
+                while (reader.Read())
+                {
+                    cmbSearchFacultyChooseFromList.Items.Add(reader["personnum"].ToString());
+                }
+                //Search Checkbox
+                txtSearchFacultyId.Enabled = false;
+                cmbSearchFacultyChooseFromList.Enabled = true;
+            }
+            else
+            {
+                txtSearchFacultyId.Enabled = true;
+                cmbSearchFacultyChooseFromList.Enabled = false;
+            }
+        }
+
+        private void txtSearchFacultyId_TextChanged(object sender, EventArgs e)
+        {
+            //Check box with database
+            txtFacultyId.Enabled = false;
+            txtFirstName.Enabled = false;
+            txtLastName.Enabled = false;
+            txtAddress.Enabled = false;
+            txtPostalCode.Enabled = false;
+            txtContactNo.Enabled = false;
+            txtSalary.Enabled = false;
+
+            cmbOffice.Items.Clear();
+            cmbGender.Items.Clear();
+            bool flag = false;
+            OleDbCommand command1 = new OleDbCommand();
+            command1.Connection = con;
+            command1.CommandText = "SELECT p.PersonId as personnum, p.fname as perfname, p.lname as perlname, p.gender as pergen, p.dob as perdob, p.postalcode as perpost, p.address as peradd, f.salary as fSal, f.contactNo as fCon, f.office as foffice  FROM PERSON p, Faculty f where p.PersonId = f.facultyid";
+            OleDbDataReader reader = command1.ExecuteReader();
+            while (reader.Read())
+            {
+                if (txtSearchFacultyId.Text == reader["personnum"].ToString())
+                {
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag)
+            {
+                lblSearchFacultyId.ForeColor = System.Drawing.Color.Green;
+                txtFacultyId.Text = reader["personnum"].ToString();
+                txtFirstName.Text = reader["perfname"].ToString();
+                txtLastName.Text = reader["perlname"].ToString();
+                cmbOffice.Items.Add(reader["foffice"].ToString());
+                cmbGender.Items.Add(reader["pergen"].ToString());
+                cmbGender.SelectedIndex = 0;
+                cmbOffice.SelectedIndex = 0;
+                txtPostalCode.Text = reader["perpost"].ToString();
+                txtAddress.Text = reader["peradd"].ToString();
+                dtpDoB.Value = Convert.ToDateTime(reader["perdob"]);
+                txtContactNo.Text = reader["fCon"].ToString();
+                txtSalary.Text = reader["fSal"].ToString();
+
+            }
+            else
+            {
+                txtFacultyId.Text = "";
+                txtFirstName.Text = "";
+                txtLastName.Text = "";
+                cmbGender.Items.Clear();
+                txtAddress.Text = "";
+                txtPostalCode.Text = "";
+                txtSalary.Text = "";
+                txtContactNo.Text = "";
+                dtpDoB.Value = DateTime.Now;
+                lblSearchFacultyId.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+
+        #endregion 
+
 
 
     }
