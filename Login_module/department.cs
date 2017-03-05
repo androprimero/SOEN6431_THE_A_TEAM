@@ -20,12 +20,12 @@ namespace WindowsFormsApplication1
         public OleDbConnection con = new OleDbConnection();
         
 
-        private void label3_Click(object sender, EventArgs e)
+        private void lblDepartmentname_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void txtDeptLocation_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -36,139 +36,139 @@ namespace WindowsFormsApplication1
             string dbDir = Directory.GetParent(Directory.GetParent(currentDir).FullName).FullName;
             con.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dbDir + @"\\university.accdb;Persist Security Info=False";
             con.Open();
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox5.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox6.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox7.DropDownStyle = ComboBoxStyle.DropDownList;
-            textBox5.Enabled = false;
-            textBox6.Enabled = false;
-            button2.Enabled = false;
+            cmbDeptFacultyId.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbDeptUpdate.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSearchDept.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbDeptDeleteChoose.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtDeptFacultyFirstName.Enabled = false;
+            txtDeptFacultyLastName.Enabled = false;
+            btnAddDepartment.Enabled = false;
             //Update
-            textBox9.Enabled = false;
-            checkBox1.Enabled = false;
-            comboBox5.Enabled = false;
-            button1.Enabled = false;
+            txtDepartmentUpdateId.Enabled = false;
+            chkDeptUpdateChooseFromList.Enabled = false;
+            cmbDeptUpdate.Enabled = false;
+            btnDepartmentUpdate.Enabled = false;
             //Search
-            textBox7.Enabled = false;
-            checkBox2.Enabled = false;
-            comboBox6.Enabled = false;
+            txtDeptSearchId.Enabled = false;
+            chkDeptmentSearchChoose.Enabled = false;
+            cmbSearchDept.Enabled = false;
             //Delete
-            textBox8.Enabled = false;
-            comboBox7.Enabled = false;
-            button4.Enabled = false;
-            checkBox3.Enabled = false;
+            txtDeptSearchDeptid.Enabled = false;
+            cmbDeptDeleteChoose.Enabled = false;
+            btnDepartmentDelete.Enabled = false;
+            chkDeptDeleteChoose.Enabled = false;
         }
 
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        private void chkUpdateDept_CheckedChanged(object sender, EventArgs e)
         {
             //Update
-            if (checkBox4.Checked == true)
+            if (chkUpdateDept.Checked == true)
             {
-                textBox1.Enabled = true;
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
+                txtDeptId.Enabled = true;
+                txtDeptName.Enabled = true;
+                txtDeptLocation.Enabled = true;
                 //Add checkbox
-                checkBox7.Checked = false;
-                checkBox1.Enabled = true;
-                comboBox5.Enabled = false;
-                button1.Enabled = true;
+                chkAddDepartmnt.Checked = false;
+                chkDeptUpdateChooseFromList.Enabled = true;
+                cmbDeptUpdate.Enabled = false;
+                btnDepartmentUpdate.Enabled = true;
                 //Search
-                textBox7.Enabled = false;
-                checkBox2.Enabled = false;
-                comboBox6.Enabled = false;
+                txtDeptSearchId.Enabled = false;
+                chkDeptmentSearchChoose.Enabled = false;
+                cmbSearchDept.Enabled = false;
                 //Delete
-                textBox8.Enabled = false;
-                comboBox7.Enabled = false;
-                button4.Enabled = false;
-                checkBox3.Enabled = false;
-                textBox9.Enabled = true;
+                txtDeptSearchDeptid.Enabled = false;
+                cmbDeptDeleteChoose.Enabled = false;
+                btnDepartmentDelete.Enabled = false;
+                chkDeptDeleteChoose.Enabled = false;
+                txtDepartmentUpdateId.Enabled = true;
                 //Check boxes
-                checkBox5.Checked = false;
-                checkBox6.Checked = false;
+                chkSearchDept.Checked = false;
+                chkDeleteDept.Checked = false;
             }
             else
             {
-                checkBox1.Enabled = false;
-                comboBox5.Enabled = false;
-                button1.Enabled = false;
+                chkDeptUpdateChooseFromList.Enabled = false;
+                cmbDeptUpdate.Enabled = false;
+                btnDepartmentUpdate.Enabled = false;
             }
         }
 
-        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        private void chkSearchDept_CheckedChanged(object sender, EventArgs e)
         {
             //Search
-            if (checkBox5.Checked == true)
+            if (chkSearchDept.Checked == true)
             {
 
                 //Add checkbox
-                checkBox7.Checked = false;
-                textBox7.Enabled = true;
-                checkBox2.Enabled = true;
-                comboBox6.Enabled = false;
+                chkAddDepartmnt.Checked = false;
+                txtDeptSearchId.Enabled = true;
+                chkDeptmentSearchChoose.Enabled = true;
+                cmbSearchDept.Enabled = false;
                 //Update
-                checkBox1.Enabled = false;
-                comboBox5.Enabled = false;
-                button1.Enabled = false;
+                chkDeptUpdateChooseFromList.Enabled = false;
+                cmbDeptUpdate.Enabled = false;
+                btnDepartmentUpdate.Enabled = false;
                 //Delete  
-                textBox8.Enabled = false;
-                comboBox7.Enabled = false;
-                button4.Enabled = false;
-                checkBox3.Enabled = false;
+                txtDeptSearchDeptid.Enabled = false;
+                cmbDeptDeleteChoose.Enabled = false;
+                btnDepartmentDelete.Enabled = false;
+                chkDeptDeleteChoose.Enabled = false;
                 //Check boxes
-                checkBox4.Checked = false;
-                checkBox6.Checked = false;
-                textBox9.Enabled = false;
+                chkUpdateDept.Checked = false;
+                chkDeleteDept.Checked = false;
+                txtDepartmentUpdateId.Enabled = false;
             }
             else
             {
-                textBox7.Enabled = false;
-                checkBox2.Enabled = false;
-                comboBox6.Enabled = false;
+                txtDeptSearchId.Enabled = false;
+                chkDeptmentSearchChoose.Enabled = false;
+                cmbSearchDept.Enabled = false;
             }
         }
 
-        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        private void chkDeleteDept_CheckedChanged(object sender, EventArgs e)
         {
             //Delete
-            if (checkBox6.Checked == true)
+            if (chkDeleteDept.Checked == true)
             {
-                textBox1.Enabled = true;
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
+                txtDeptId.Enabled = true;
+                txtDeptName.Enabled = true;
+                txtDeptLocation.Enabled = true;
 
-                textBox9.Enabled = false;
+                txtDepartmentUpdateId.Enabled = false;
 
                 //Add checkbox
-                checkBox7.Checked = false;
-                textBox8.Enabled = true;
-                comboBox7.Enabled = false;
-                button4.Enabled = true;
-                checkBox3.Enabled = true;
+                chkAddDepartmnt.Checked = false;
+                txtDeptSearchDeptid.Enabled = true;
+                cmbDeptDeleteChoose.Enabled = false;
+                btnDepartmentDelete.Enabled = true;
+                chkDeptDeleteChoose.Enabled = true;
                 //Update
-                checkBox1.Enabled = false;
-                comboBox5.Enabled = false;
-                button1.Enabled = false;
+                chkDeptUpdateChooseFromList.Enabled = false;
+                cmbDeptUpdate.Enabled = false;
+                btnDepartmentUpdate.Enabled = false;
                 //Search
-                textBox7.Enabled = false;
-                checkBox2.Enabled = false;
-                comboBox6.Enabled = false;
+                txtDeptSearchId.Enabled = false;
+                chkDeptmentSearchChoose.Enabled = false;
+                cmbSearchDept.Enabled = false;
                 //check boxes
-                checkBox4.Checked = false;
-                checkBox5.Checked = false;
+                chkUpdateDept.Checked = false;
+                chkSearchDept.Checked = false;
             }
             else
             {
-                textBox8.Enabled = false;
-                comboBox7.Enabled = false;
-                button4.Enabled = false;
-                checkBox3.Enabled = false;
+                txtDeptSearchDeptid.Enabled = false;
+                cmbDeptDeleteChoose.Enabled = false;
+                btnDepartmentDelete.Enabled = false;
+                chkDeptDeleteChoose.Enabled = false;
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void chkDeptUpdateChooseFromList_CheckedChanged(object sender, EventArgs e)
         {
-            comboBox5.Items.Clear();
-            if (checkBox1.Checked == true)
+            cmbDeptUpdate.Items.Clear();
+            if (chkDeptUpdateChooseFromList.Checked == true)
             {
                 //Check box with database
                 OleDbCommand com = new OleDbCommand();
@@ -177,23 +177,23 @@ namespace WindowsFormsApplication1
                 OleDbDataReader dread = com.ExecuteReader();
                 while (dread.Read())
                 {
-                    comboBox5.Items.Add(dread["deptid"].ToString());
+                    cmbDeptUpdate.Items.Add(dread["deptid"].ToString());
                 }
-                textBox9.Enabled = false;
+                txtDepartmentUpdateId.Enabled = false;
                 //Update Checkbox
-                comboBox5.Enabled = true;
+                cmbDeptUpdate.Enabled = true;
             }
             else
             {
-                textBox9.Enabled = true;
-                comboBox5.Enabled = false;
+                txtDepartmentUpdateId.Enabled = true;
+                cmbDeptUpdate.Enabled = false;
             }
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void chkDeptmentSearchChoose_CheckedChanged(object sender, EventArgs e)
         {
-            comboBox6.Items.Clear();
-            if (checkBox2.Checked == true)
+            cmbSearchDept.Items.Clear();
+            if (chkDeptmentSearchChoose.Checked == true)
             {
                 //Check box with database
                 OleDbCommand com = new OleDbCommand();
@@ -202,23 +202,23 @@ namespace WindowsFormsApplication1
                 OleDbDataReader dread = com.ExecuteReader();
                 while (dread.Read())
                 {
-                    comboBox6.Items.Add(dread["deptid"].ToString());
+                    cmbSearchDept.Items.Add(dread["deptid"].ToString());
                 }
                 //Search Checkbox
-                textBox7.Enabled = false;
-                comboBox6.Enabled = true;
+                txtDeptSearchId.Enabled = false;
+                cmbSearchDept.Enabled = true;
             }
             else
             {
-                textBox7.Enabled = true;
-                comboBox6.Enabled = false;
+                txtDeptSearchId.Enabled = true;
+                cmbSearchDept.Enabled = false;
             }
         }
 
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        private void chkDeptDeleteChoose_CheckedChanged(object sender, EventArgs e)
         {
-            comboBox7.Items.Clear();
-            if (checkBox3.Checked == true)
+            cmbDeptDeleteChoose.Items.Clear();
+            if (chkDeptDeleteChoose.Checked == true)
             {
                 //Check box with database
                 OleDbCommand com = new OleDbCommand();
@@ -227,37 +227,37 @@ namespace WindowsFormsApplication1
                 OleDbDataReader dread = com.ExecuteReader();
                 while (dread.Read())
                 {
-                    comboBox7.Items.Add(dread["deptid"].ToString());
+                    cmbDeptDeleteChoose.Items.Add(dread["deptid"].ToString());
                 }
                 //Delete Checkbox
-                textBox8.Enabled = false;
-                comboBox7.Enabled = true;
+                txtDeptSearchDeptid.Enabled = false;
+                cmbDeptDeleteChoose.Enabled = true;
             }
             else
             {
-                textBox8.Enabled = true;
-                comboBox7.Enabled = false;
+                txtDeptSearchDeptid.Enabled = true;
+                cmbDeptDeleteChoose.Enabled = false;
             }
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
+        private void txtDeptId_Leave(object sender, EventArgs e)
         {
-            string input = textBox1.Text;
+            string input = txtDeptId.Text;
             try
             {
                 long id = long.Parse(input);
-                label2.ForeColor = System.Drawing.Color.Green;
+                lblDepartmentId.ForeColor = System.Drawing.Color.Green;
             }
             catch
             {
-                textBox1.Focus();
-                label2.ForeColor = System.Drawing.Color.Red;
+                txtDeptId.Focus();
+                lblDepartmentId.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void textBox2_Leave(object sender, EventArgs e)
+        private void txtDeptName_Leave(object sender, EventArgs e)
         {
-            string input = textBox2.Text;
+            string input = txtDeptName.Text;
             int count = 0;
             for (int i = 0; i < input.Length; i++)
             {
@@ -266,18 +266,18 @@ namespace WindowsFormsApplication1
             }
             if (count == input.Length)
             {
-                label3.ForeColor = System.Drawing.Color.Green;
+                lblDepartmentname.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
-                textBox2.Focus();
-                label3.ForeColor = System.Drawing.Color.Red;
+                txtDeptName.Focus();
+                lblDepartmentname.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void textBox3_Leave(object sender, EventArgs e)
+        private void txtDeptLocation_Leave(object sender, EventArgs e)
         {
-            string input = textBox3.Text;
+            string input = txtDeptLocation.Text;
             int count = 0;
             for (int i = 0; i < input.Length; i++)
             {
@@ -286,21 +286,21 @@ namespace WindowsFormsApplication1
             }
             if (count == input.Length)
             {
-                label4.ForeColor = System.Drawing.Color.Green;
+                lblLocation.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
-                textBox3.Focus();
-                label4.ForeColor = System.Drawing.Color.Red;
+                txtDeptLocation.Focus();
+                lblLocation.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void textBox9_TextChanged(object sender, EventArgs e)
+        private void txtDepartmentUpdateId_TextChanged(object sender, EventArgs e)
         {
             //Check box with database
-            textBox1.Enabled = false;
-            comboBox1.Items.Clear();
-            if (textBox9.Text != "")
+            txtDeptId.Enabled = false;
+            cmbDeptFacultyId.Items.Clear();
+            if (txtDepartmentUpdateId.Text != "")
             {
                 OleDbCommand com1 = new OleDbCommand();
                 com1.Connection = con;
@@ -312,48 +312,48 @@ namespace WindowsFormsApplication1
                 OleDbDataReader fread = com.ExecuteReader();
                 while (fread.Read())
                 {
-                    if (textBox9.Text == fread["dept"].ToString())
+                    if (txtDepartmentUpdateId.Text == fread["dept"].ToString())
                     {
-                        comboBox1.Items.Add(fread["fid"].ToString());
-                        textBox1.Text = fread["dept"].ToString();
-                        textBox2.Text = fread["dename"].ToString();
-                        textBox3.Text = fread["dloc"].ToString();
-                        comboBox1.SelectedIndex = 0;
+                        cmbDeptFacultyId.Items.Add(fread["fid"].ToString());
+                        txtDeptId.Text = fread["dept"].ToString();
+                        txtDeptName.Text = fread["dename"].ToString();
+                        txtDeptLocation.Text = fread["dloc"].ToString();
+                        cmbDeptFacultyId.SelectedIndex = 0;
                         while (Cread.Read())
                         {
                             if (fread["dept"].ToString() == Cread["classDept"].ToString())
                             { 
-                                textBox4.Text = Cread["cName"].ToString();
+                                txtDeptClass.Text = Cread["cName"].ToString();
                                 break;
                             }
                         }
-                        label13.ForeColor = System.Drawing.Color.Green;
+                        lblDepartmentIdDept.ForeColor = System.Drawing.Color.Green;
                         break;
                     }
                     else
                     {
 
-                        textBox1.Text = "";
-                        textBox2.Text = "";
-                        textBox3.Text = "";
-                        comboBox1.Items.Clear();
-                        textBox5.Text = "";
-                        textBox6.Text = "";
-                        textBox4.Text = "";
-                        label13.ForeColor = System.Drawing.Color.Red;
+                        txtDeptId.Text = "";
+                        txtDeptName.Text = "";
+                        txtDeptLocation.Text = "";
+                        cmbDeptFacultyId.Items.Clear();
+                        txtDeptFacultyFirstName.Text = "";
+                        txtDeptFacultyLastName.Text = "";
+                        txtDeptClass.Text = "";
+                        lblDepartmentIdDept.ForeColor = System.Drawing.Color.Red;
                     }
                 }
             }
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
+        private void txtDeptSearchId_TextChanged(object sender, EventArgs e)
         {
-            textBox1.Enabled = false;
-            textBox2.Enabled = false;
-            textBox3.Enabled = false;
-            textBox4.Enabled = false;
-            comboBox1.Items.Clear();
-            if (textBox7.Text != "")
+            txtDeptId.Enabled = false;
+            txtDeptName.Enabled = false;
+            txtDeptLocation.Enabled = false;
+            txtDeptClass.Enabled = false;
+            cmbDeptFacultyId.Items.Clear();
+            if (txtDeptSearchId.Text != "")
             {
                 OleDbCommand com1 = new OleDbCommand();
                 com1.Connection = con;
@@ -367,50 +367,50 @@ namespace WindowsFormsApplication1
                 OleDbDataReader fread = com.ExecuteReader();
                 while (fread.Read())
                 {
-                    if (textBox7.Text == fread["dept"].ToString())
+                    if (txtDeptSearchId.Text == fread["dept"].ToString())
                     {
-                        comboBox1.Items.Add(fread["fid"].ToString());
-                        textBox1.Text = fread["dept"].ToString();
-                        textBox2.Text = fread["dename"].ToString();
-                        textBox3.Text = fread["dloc"].ToString();
+                        cmbDeptFacultyId.Items.Add(fread["fid"].ToString());
+                        txtDeptId.Text = fread["dept"].ToString();
+                        txtDeptName.Text = fread["dename"].ToString();
+                        txtDeptLocation.Text = fread["dloc"].ToString();
                         while (Cread.Read())
                         {
                             if (fread["dept"].ToString() == Cread["classDept"].ToString())
                             {
-                                textBox4.Text = Cread["cName"].ToString();
+                                txtDeptClass.Text = Cread["cName"].ToString();
                                 break;
                             }
                         }
-                        comboBox1.SelectedIndex = 0;
-                        label13.ForeColor = System.Drawing.Color.Green;
+                        cmbDeptFacultyId.SelectedIndex = 0;
+                        lblDepartmentIdDept.ForeColor = System.Drawing.Color.Green;
                         break;
                     }
                     else
                     {
 
-                        textBox1.Text = "";
-                        textBox2.Text = "";
-                        textBox3.Text = "";
-                        comboBox1.Items.Clear();
-                        textBox5.Text = "";
-                        textBox6.Text = "";
+                        txtDeptId.Text = "";
+                        txtDeptName.Text = "";
+                        txtDeptLocation.Text = "";
+                        cmbDeptFacultyId.Items.Clear();
+                        txtDeptFacultyFirstName.Text = "";
+                        txtDeptFacultyLastName.Text = "";
 
-                        textBox4.Text = "";
-                        label13.ForeColor = System.Drawing.Color.Red;
+                        txtDeptClass.Text = "";
+                        lblDepartmentIdDept.ForeColor = System.Drawing.Color.Red;
                     }
                 }
             }
         }
 
-        private void textBox8_TextChanged(object sender, EventArgs e)
+        private void txtDeptSearchDeptid_TextChanged(object sender, EventArgs e)
         {
-            textBox1.Enabled = false;
-            textBox2.Enabled = false;
-            textBox3.Enabled = false;
+            txtDeptId.Enabled = false;
+            txtDeptName.Enabled = false;
+            txtDeptLocation.Enabled = false;
 
-            textBox4.Enabled = false;
-            comboBox1.Items.Clear();
-            if (textBox8.Text != "")
+            txtDeptClass.Enabled = false;
+            cmbDeptFacultyId.Items.Clear();
+            if (txtDeptSearchDeptid.Text != "")
             {
                 OleDbCommand com1 = new OleDbCommand();
                 com1.Connection = con;
@@ -424,78 +424,78 @@ namespace WindowsFormsApplication1
                 OleDbDataReader fread = com.ExecuteReader();
                 while (fread.Read())
                 {
-                    if (textBox8.Text == fread["dept"].ToString())
+                    if (txtDeptSearchDeptid.Text == fread["dept"].ToString())
                     {
-                        comboBox1.Items.Add(fread["fid"].ToString());
-                        textBox1.Text = fread["dept"].ToString();
-                        textBox2.Text = fread["dename"].ToString();
-                        textBox3.Text = fread["dloc"].ToString();
+                        cmbDeptFacultyId.Items.Add(fread["fid"].ToString());
+                        txtDeptId.Text = fread["dept"].ToString();
+                        txtDeptName.Text = fread["dename"].ToString();
+                        txtDeptLocation.Text = fread["dloc"].ToString();
                         while (Cread.Read())
                         {
                             if (fread["dept"].ToString() == Cread["classDept"].ToString())
                             {
-                                textBox4.Text = Cread["cName"].ToString();
+                                txtDeptClass.Text = Cread["cName"].ToString();
                                 break;
                             }
                         }
-                        comboBox1.SelectedIndex = 0;
-                        label13.ForeColor = System.Drawing.Color.Green;
+                        cmbDeptFacultyId.SelectedIndex = 0;
+                        lblDepartmentIdDept.ForeColor = System.Drawing.Color.Green;
                         break;
                     }
                     else
                     {
 
-                        textBox1.Text = "";
-                        textBox2.Text = "";
-                        textBox3.Text = "";
-                        comboBox1.Items.Clear();
-                        textBox5.Text = "";
-                        textBox6.Text = "";
+                        txtDeptId.Text = "";
+                        txtDeptName.Text = "";
+                        txtDeptLocation.Text = "";
+                        cmbDeptFacultyId.Items.Clear();
+                        txtDeptFacultyFirstName.Text = "";
+                        txtDeptFacultyLastName.Text = "";
 
-                        textBox4.Text = "";
-                        label13.ForeColor = System.Drawing.Color.Red;
+                        txtDeptClass.Text = "";
+                        lblDepartmentIdDept.ForeColor = System.Drawing.Color.Red;
                     }
                 }
             }
         }
 
-        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        private void chkAddDepartmnt_CheckedChanged(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
-            if (checkBox7.Checked == true)
+            cmbDeptFacultyId.Items.Clear();
+            if (chkAddDepartmnt.Checked == true)
             {
-                textBox4.Enabled = true;
+                txtDeptClass.Enabled = true;
                 OleDbCommand com = new OleDbCommand();
                 com.Connection = con;
                 com.CommandText = "select facultyid from faculty where facultyid NOT IN (select facultyid from department) ";
                 OleDbDataReader fread = com.ExecuteReader();
                 while (fread.Read())
                 {
-                    comboBox1.Items.Add(fread["facultyid"].ToString());
+                    cmbDeptFacultyId.Items.Add(fread["facultyid"].ToString());
                 }
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox1.Enabled = true;
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
+                txtDeptId.Text = "";
+                txtDeptName.Text = "";
+                txtDeptLocation.Text = "";
+                txtDeptId.Enabled = true;
+                txtDeptName.Enabled = true;
+                txtDeptLocation.Enabled = true;
                 
-                checkBox4.Checked = false;
-                checkBox5.Checked = false;
-                checkBox6.Checked = false;
-                button2.Enabled = true;
+                chkUpdateDept.Checked = false;
+                chkSearchDept.Checked = false;
+                chkDeleteDept.Checked = false;
+                btnAddDepartment.Enabled = true;
             }
             else
             {
-                button2.Enabled = false;
+                btnAddDepartment.Enabled = false;
             }
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtDeptId_TextChanged(object sender, EventArgs e)
         {
             bool flag = false;
-            string input = textBox1.Text;
+            string input = txtDeptId.Text;
             try
             {
                 int id = int.Parse(input);
@@ -513,20 +513,20 @@ namespace WindowsFormsApplication1
                 }
                 if (!flag)
                 {
-                    label2.ForeColor = System.Drawing.Color.Green;
+                    lblDepartmentId.ForeColor = System.Drawing.Color.Green;
                 }
                 else
                 {
-                    label2.ForeColor = System.Drawing.Color.Red;
+                    lblDepartmentId.ForeColor = System.Drawing.Color.Red;
                 }
             }
             catch
             {
-                label2.ForeColor = System.Drawing.Color.Red;
+                lblDepartmentId.ForeColor = System.Drawing.Color.Red;
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbDeptFacultyId_SelectedIndexChanged(object sender, EventArgs e)
         {
             OleDbCommand com = new OleDbCommand();
             com.Connection = con;
@@ -534,19 +534,19 @@ namespace WindowsFormsApplication1
             OleDbDataReader fread = com.ExecuteReader();
             while (fread.Read())
             {
-                if (fread["fId"].ToString() == comboBox1.SelectedItem.ToString())
+                if (fread["fId"].ToString() == cmbDeptFacultyId.SelectedItem.ToString())
                 {
-                    textBox5.Text = fread["pfname"].ToString();
-                    textBox6.Text = fread["plname"].ToString();
+                    txtDeptFacultyFirstName.Text = fread["pfname"].ToString();
+                    txtDeptFacultyLastName.Text = fread["plname"].ToString();
                     break;
                 }
             }
         }
 
-        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbDeptUpdate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
-            textBox1.Enabled = false;
+            cmbDeptFacultyId.Items.Clear();
+            txtDeptId.Enabled = false;
             
             OleDbCommand com = new OleDbCommand();
             com.Connection = con;
@@ -559,32 +559,32 @@ namespace WindowsFormsApplication1
             OleDbDataReader fread = com.ExecuteReader();
             while (fread.Read())
             {
-                if (comboBox5.SelectedItem.ToString() == fread["dept"].ToString())
+                if (cmbDeptUpdate.SelectedItem.ToString() == fread["dept"].ToString())
                 {
-                    comboBox1.Items.Add(fread["fid"].ToString());
-                    textBox1.Text = fread["dept"].ToString();
-                    textBox2.Text = fread["dename"].ToString();
+                    cmbDeptFacultyId.Items.Add(fread["fid"].ToString());
+                    txtDeptId.Text = fread["dept"].ToString();
+                    txtDeptName.Text = fread["dename"].ToString();
                     while (Cread.Read())
                     {
                         if (fread["dept"].ToString() == Cread["classDept"].ToString())
                         {
-                            textBox4.Text = Cread["cName"].ToString();
+                            txtDeptClass.Text = Cread["cName"].ToString();
                             break;
                         }
                     }
-                    textBox3.Text = fread["dloc"].ToString();
+                    txtDeptLocation.Text = fread["dloc"].ToString();
                     break;
                 }
             }
-            comboBox1.SelectedIndex = 0;
+            cmbDeptFacultyId.SelectedIndex = 0;
         }
 
-        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbSearchDept_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
-            textBox1.Enabled = false;
-            textBox2.Enabled = false;
-            textBox3.Enabled = false;
+            cmbDeptFacultyId.Items.Clear();
+            txtDeptId.Enabled = false;
+            txtDeptName.Enabled = false;
+            txtDeptLocation.Enabled = false;
             OleDbCommand com = new OleDbCommand();
             com.Connection = con;
             OleDbCommand com1 = new OleDbCommand();
@@ -597,30 +597,30 @@ namespace WindowsFormsApplication1
             OleDbDataReader fread = com.ExecuteReader();
             while (fread.Read())
             {
-                if (comboBox6.SelectedItem.ToString() == fread["dept"].ToString())
+                if (cmbSearchDept.SelectedItem.ToString() == fread["dept"].ToString())
                 {
-                    comboBox1.Items.Add(fread["fid"].ToString());
-                    textBox1.Text = fread["dept"].ToString();
-                    textBox2.Text = fread["dename"].ToString();
-                    textBox3.Text = fread["dloc"].ToString();
+                    cmbDeptFacultyId.Items.Add(fread["fid"].ToString());
+                    txtDeptId.Text = fread["dept"].ToString();
+                    txtDeptName.Text = fread["dename"].ToString();
+                    txtDeptLocation.Text = fread["dloc"].ToString();
                     while (Cread.Read())
                     {
                         if (fread["dept"].ToString() == Cread["classDept"].ToString())
                         {
-                            textBox4.Text = Cread["cName"].ToString();
+                            txtDeptClass.Text = Cread["cName"].ToString();
                             break;
                         }
                     }
                     break;
                 }
             }
-            comboBox1.SelectedIndex = 0;
+            cmbDeptFacultyId.SelectedIndex = 0;
         }
 
-        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbDeptDeleteChoose_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
-            textBox1.Enabled = false;
+            cmbDeptFacultyId.Items.Clear();
+            txtDeptId.Enabled = false;
             OleDbCommand com = new OleDbCommand();
             com.Connection = con;
             OleDbCommand com1 = new OleDbCommand();
@@ -633,33 +633,33 @@ namespace WindowsFormsApplication1
             OleDbDataReader fread = com.ExecuteReader();
             while (fread.Read())
             {
-                if (comboBox7.SelectedItem.ToString() == fread["dept"].ToString())
+                if (cmbDeptDeleteChoose.SelectedItem.ToString() == fread["dept"].ToString())
                 {
-                    comboBox1.Items.Add(fread["fid"].ToString());
-                    textBox1.Text = fread["dept"].ToString();
-                    textBox2.Text = fread["dename"].ToString();
-                    textBox3.Text = fread["dloc"].ToString();
+                    cmbDeptFacultyId.Items.Add(fread["fid"].ToString());
+                    txtDeptId.Text = fread["dept"].ToString();
+                    txtDeptName.Text = fread["dename"].ToString();
+                    txtDeptLocation.Text = fread["dloc"].ToString();
                     while (Cread.Read())
                     {
                         if (fread["dept"].ToString() == Cread["classDept"].ToString())
                         {
-                            textBox4.Text = Cread["cName"].ToString();
+                            txtDeptClass.Text = Cread["cName"].ToString();
                             break;
                         }
                     }
                     break;
                 }
             }
-            comboBox1.SelectedIndex = 0;
+            cmbDeptFacultyId.SelectedIndex = 0;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnAddDepartment_Click(object sender, EventArgs e)
         {
-            string id = textBox1.Text;
-            string dname = textBox2.Text;
-            string dloc = textBox3.Text;
-            string className = textBox4.Text;
-            object facultyId = comboBox1.SelectedItem;
+            string id = txtDeptId.Text;
+            string dname = txtDeptName.Text;
+            string dloc = txtDeptLocation.Text;
+            string className = txtDeptClass.Text;
+            object facultyId = cmbDeptFacultyId.SelectedItem;
             if (id != "" && dname != "" && dloc != "" && facultyId != null && className !="")
             {
                 OleDbCommand com1 = new OleDbCommand();
@@ -678,18 +678,18 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDepartmentUpdate_Click(object sender, EventArgs e)
         {
             try
             {
-                if (textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "")
+                if (txtDeptName.Text != "" && txtDeptLocation.Text != "" && txtDeptClass.Text != "")
                 {
                     OleDbCommand com1 = new OleDbCommand();
                     com1.Connection = con;
                     OleDbCommand com = new OleDbCommand();
                     com.Connection = con;
-                    com1.CommandText = "Update class set className = '"+textBox4.Text+"' where deptid =" + int.Parse(textBox1.Text) + "";
-                    com.CommandText = "Update department set dname = '" + textBox2.Text + "', location ='" + textBox3.Text + "' where deptid =" + int.Parse(textBox1.Text) + "";
+                    com1.CommandText = "Update class set className = '"+txtDeptClass.Text+"' where deptid =" + int.Parse(txtDeptId.Text) + "";
+                    com.CommandText = "Update department set dname = '" + txtDeptName.Text + "', location ='" + txtDeptLocation.Text + "' where deptid =" + int.Parse(txtDeptId.Text) + "";
                     com.ExecuteNonQuery();
                     com1.ExecuteNonQuery();
                     MessageBox.Show("Successfully Updated");
@@ -701,7 +701,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnDepartmentDelete_Click(object sender, EventArgs e)
         {
             OleDbCommand com1 = new OleDbCommand();
             com1.Connection = con;
@@ -716,16 +716,16 @@ namespace WindowsFormsApplication1
             OleDbCommand com6 = new OleDbCommand();
             com6.Connection = con;
             bool flag = false;
-            if (textBox8.Enabled == true && comboBox7.Enabled == false)
+            if (txtDeptSearchDeptid.Enabled == true && cmbDeptDeleteChoose.Enabled == false)
             {
                 try
                 {
                     OleDbCommand com = new OleDbCommand();
                     com.Connection = con;
-                    com2.CommandText = "Delete from course where deptid = "+int.Parse(textBox1.Text)+"";
-                    com1.CommandText = "Delete from Student where deptid =" +int.Parse(textBox1.Text)+"";
-                    com5.CommandText = "Delete from class where deptid =" + int.Parse(textBox1.Text) + "";
-                    com.CommandText = "Delete from department where deptid = " + int.Parse(textBox1.Text) + "";
+                    com2.CommandText = "Delete from course where deptid = "+int.Parse(txtDeptId.Text)+"";
+                    com1.CommandText = "Delete from Student where deptid =" +int.Parse(txtDeptId.Text)+"";
+                    com5.CommandText = "Delete from class where deptid =" + int.Parse(txtDeptId.Text) + "";
+                    com.CommandText = "Delete from department where deptid = " + int.Parse(txtDeptId.Text) + "";
                     com5.ExecuteNonQuery();
                     com2.ExecuteNonQuery();
                     com1.ExecuteNonQuery();
@@ -738,13 +738,13 @@ namespace WindowsFormsApplication1
                 }
                 if (flag)
                 {
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-                    textBox3.Text = "";
-                    textBox5.Text = "";
-                    textBox6.Text = "";
-                    textBox4.Text = "";
-                    comboBox1.Items.Clear(); 
+                    txtDeptId.Text = "";
+                    txtDeptName.Text = "";
+                    txtDeptLocation.Text = "";
+                    txtDeptFacultyFirstName.Text = "";
+                    txtDeptFacultyLastName.Text = "";
+                    txtDeptClass.Text = "";
+                    cmbDeptFacultyId.Items.Clear(); 
                     MessageBox.Show("Successfully Deleted");
                 }
                 else
@@ -758,10 +758,10 @@ namespace WindowsFormsApplication1
                 {
                     OleDbCommand com = new OleDbCommand();
                     com.Connection = con;
-                    com4.CommandText = "Delete from course where deptid = " + int.Parse(comboBox7.SelectedItem.ToString()) + "";
-                    com3.CommandText = "Delete from Student where deptid =" + int.Parse(comboBox7.SelectedItem.ToString()) + "";
-                    com6.CommandText = "Delete from class where deptid =" + int.Parse(comboBox7.SelectedItem.ToString()) + "";
-                    com.CommandText = "Delete from department where deptid = " + int.Parse(comboBox7.SelectedItem.ToString()) + "";
+                    com4.CommandText = "Delete from course where deptid = " + int.Parse(cmbDeptDeleteChoose.SelectedItem.ToString()) + "";
+                    com3.CommandText = "Delete from Student where deptid =" + int.Parse(cmbDeptDeleteChoose.SelectedItem.ToString()) + "";
+                    com6.CommandText = "Delete from class where deptid =" + int.Parse(cmbDeptDeleteChoose.SelectedItem.ToString()) + "";
+                    com.CommandText = "Delete from department where deptid = " + int.Parse(cmbDeptDeleteChoose.SelectedItem.ToString()) + "";
                     com6.ExecuteNonQuery();
                     com4.ExecuteNonQuery();
                     com3.ExecuteNonQuery();
@@ -774,13 +774,13 @@ namespace WindowsFormsApplication1
                 }
                 if (flag)
                 {
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-                    textBox3.Text = "";
-                    textBox5.Text = "";
-                    textBox6.Text = "";
-                    textBox4.Text = "";
-                    comboBox1.Items.Clear();
+                    txtDeptId.Text = "";
+                    txtDeptName.Text = "";
+                    txtDeptLocation.Text = "";
+                    txtDeptFacultyFirstName.Text = "";
+                    txtDeptFacultyLastName.Text = "";
+                    txtDeptClass.Text = "";
+                    cmbDeptFacultyId.Items.Clear();
                     MessageBox.Show("Successfully Deleted");
                 }
                 else
@@ -790,9 +790,9 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void textBox4_MouseLeave(object sender, EventArgs e)
+        private void txtDeptClass_MouseLeave(object sender, EventArgs e)
         {
-            string input = textBox4.Text;
+            string input = txtDeptClass.Text;
             int count = 0;
             for (int i = 0; i < input.Length; i++)
             {
@@ -801,13 +801,18 @@ namespace WindowsFormsApplication1
             }
             if (count == input.Length)
             {
-                label9.ForeColor = System.Drawing.Color.Green;
+                lblDepartmentClass.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
-                textBox4.Focus();
-                label9.ForeColor = System.Drawing.Color.Red;
+                txtDeptClass.Focus();
+                lblDepartmentClass.ForeColor = System.Drawing.Color.Red;
             }
+        }
+
+        private void txtDeptFacultyLastName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
