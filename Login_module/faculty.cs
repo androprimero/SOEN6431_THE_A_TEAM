@@ -20,8 +20,6 @@ namespace WindowsFormsApplication1
         //Global Variable
         public OleDbConnection con = new OleDbConnection();
 
-
-
         private void faculty_Load(object sender, EventArgs e)
         {
             string currentDir = Directory.GetCurrentDirectory();
@@ -138,8 +136,6 @@ namespace WindowsFormsApplication1
         }
         #endregion
 
-
-
         #region "Add Faculty"
 
         private void btnAddFaculty_Click(object sender, EventArgs e)
@@ -172,7 +168,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                MessageBox.Show("Enter Missing Values");
+                MessageBox.Show("Enter the missing values");
             }
 
         }
@@ -337,7 +333,6 @@ namespace WindowsFormsApplication1
 
         #endregion
 
-
         #region "Update Faculty"
 
         private void txtUpdateFacultyId_TextChanged(object sender, EventArgs e)
@@ -492,7 +487,6 @@ namespace WindowsFormsApplication1
 
         #endregion
 
-
         #region "Search Faculty"
 
         private void cmbSearchFacultyChooseFromList_SelectedIndexChanged(object sender, EventArgs e)
@@ -585,8 +579,6 @@ namespace WindowsFormsApplication1
 
 
         #endregion 
-
-
 
     }
 }
