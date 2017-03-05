@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblStudent = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblStudentID = new System.Windows.Forms.Label();
+            this.lblStudentCourse = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblStudentDepartment = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblStudentName = new System.Windows.Forms.Label();
+            this.lblStudentLName = new System.Windows.Forms.Label();
+            this.lblStudentGender = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -65,24 +65,24 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.chkUpDateStudent = new System.Windows.Forms.CheckBox();
+            this.chkSearchStudent = new System.Windows.Forms.CheckBox();
+            this.chkDeleteStudent = new System.Windows.Forms.CheckBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.chkAddStudent = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // label1
+            // lblStudent
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Font = new System.Drawing.Font("Mistral", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(283, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 26);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Student Data";
+            this.lblStudent.AutoSize = true;
+            this.lblStudent.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblStudent.Font = new System.Drawing.Font("Mistral", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudent.Location = new System.Drawing.Point(283, 49);
+            this.lblStudent.Name = "lblStudent";
+            this.lblStudent.Size = new System.Drawing.Size(113, 26);
+            this.lblStudent.TabIndex = 2;
+            this.lblStudent.Text = "Student Data";
             // 
             // textBox1
             // 
@@ -129,27 +129,27 @@
             this.dateTimePicker1.TabIndex = 7;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // label2
+            // lblStudentID
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(95, 126);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Student Id:";
+            this.lblStudentID.AutoSize = true;
+            this.lblStudentID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentID.Location = new System.Drawing.Point(95, 126);
+            this.lblStudentID.Name = "lblStudentID";
+            this.lblStudentID.Size = new System.Drawing.Size(70, 13);
+            this.lblStudentID.TabIndex = 8;
+            this.lblStudentID.Text = "Student Id:";
             // 
-            // label3
+            // lblStudentCourse
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(95, 180);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Course: ";
+            this.lblStudentCourse.AutoSize = true;
+            this.lblStudentCourse.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblStudentCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentCourse.Location = new System.Drawing.Point(95, 180);
+            this.lblStudentCourse.Name = "lblStudentCourse";
+            this.lblStudentCourse.Size = new System.Drawing.Size(54, 13);
+            this.lblStudentCourse.TabIndex = 9;
+            this.lblStudentCourse.Text = "Course: ";
             // 
             // comboBox2
             // 
@@ -159,16 +159,16 @@
             this.comboBox2.Size = new System.Drawing.Size(119, 21);
             this.comboBox2.TabIndex = 10;
             // 
-            // label4
+            // lblStudentDepartment
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(95, 153);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Department: ";
+            this.lblStudentDepartment.AutoSize = true;
+            this.lblStudentDepartment.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblStudentDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentDepartment.Location = new System.Drawing.Point(95, 153);
+            this.lblStudentDepartment.Name = "lblStudentDepartment";
+            this.lblStudentDepartment.Size = new System.Drawing.Size(80, 13);
+            this.lblStudentDepartment.TabIndex = 11;
+            this.lblStudentDepartment.Text = "Department: ";
             // 
             // comboBox4
             // 
@@ -178,38 +178,38 @@
             this.comboBox4.Size = new System.Drawing.Size(119, 21);
             this.comboBox4.TabIndex = 14;
             // 
-            // label6
+            // lblStudentName
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(390, 123);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "First Name: ";
+            this.lblStudentName.AutoSize = true;
+            this.lblStudentName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentName.Location = new System.Drawing.Point(390, 123);
+            this.lblStudentName.Name = "lblStudentName";
+            this.lblStudentName.Size = new System.Drawing.Size(75, 13);
+            this.lblStudentName.TabIndex = 15;
+            this.lblStudentName.Text = "First Name: ";
             // 
-            // label7
+            // lblStudentLName
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(390, 151);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Last Name: ";
+            this.lblStudentLName.AutoSize = true;
+            this.lblStudentLName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblStudentLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentLName.Location = new System.Drawing.Point(390, 151);
+            this.lblStudentLName.Name = "lblStudentLName";
+            this.lblStudentLName.Size = new System.Drawing.Size(75, 13);
+            this.lblStudentLName.TabIndex = 16;
+            this.lblStudentLName.Text = "Last Name: ";
             // 
-            // label8
+            // lblStudentGender
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(390, 176);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Gender: ";
+            this.lblStudentGender.AutoSize = true;
+            this.lblStudentGender.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblStudentGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentGender.Location = new System.Drawing.Point(390, 176);
+            this.lblStudentGender.Name = "lblStudentGender";
+            this.lblStudentGender.Size = new System.Drawing.Size(56, 13);
+            this.lblStudentGender.TabIndex = 17;
+            this.lblStudentGender.Text = "Gender: ";
             // 
             // label9
             // 
@@ -456,45 +456,45 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // checkBox4
+            // chkUpDateStudent
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(112, 22);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(67, 17);
-            this.checkBox4.TabIndex = 42;
-            this.checkBox4.Text = "Update";
-            this.checkBox4.UseVisualStyleBackColor = false;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
-            this.checkBox4.CheckStateChanged += new System.EventHandler(this.checkBox4_CheckStateChanged);
+            this.chkUpDateStudent.AutoSize = true;
+            this.chkUpDateStudent.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.chkUpDateStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkUpDateStudent.Location = new System.Drawing.Point(112, 22);
+            this.chkUpDateStudent.Name = "chkUpDateStudent";
+            this.chkUpDateStudent.Size = new System.Drawing.Size(67, 17);
+            this.chkUpDateStudent.TabIndex = 42;
+            this.chkUpDateStudent.Text = "Update";
+            this.chkUpDateStudent.UseVisualStyleBackColor = false;
+            this.chkUpDateStudent.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            this.chkUpDateStudent.CheckStateChanged += new System.EventHandler(this.checkBox4_CheckStateChanged);
             // 
-            // checkBox5
+            // chkSearchStudent
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.Location = new System.Drawing.Point(112, 45);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(66, 17);
-            this.checkBox5.TabIndex = 43;
-            this.checkBox5.Text = "Search";
-            this.checkBox5.UseVisualStyleBackColor = false;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
+            this.chkSearchStudent.AutoSize = true;
+            this.chkSearchStudent.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.chkSearchStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSearchStudent.Location = new System.Drawing.Point(112, 45);
+            this.chkSearchStudent.Name = "chkSearchStudent";
+            this.chkSearchStudent.Size = new System.Drawing.Size(66, 17);
+            this.chkSearchStudent.TabIndex = 43;
+            this.chkSearchStudent.Text = "Search";
+            this.chkSearchStudent.UseVisualStyleBackColor = false;
+            this.chkSearchStudent.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
-            // checkBox6
+            // chkDeleteStudent
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(112, 68);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(63, 17);
-            this.checkBox6.TabIndex = 44;
-            this.checkBox6.Text = "Delete";
-            this.checkBox6.UseVisualStyleBackColor = false;
-            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+            this.chkDeleteStudent.AutoSize = true;
+            this.chkDeleteStudent.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.chkDeleteStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDeleteStudent.Location = new System.Drawing.Point(112, 68);
+            this.chkDeleteStudent.Name = "chkDeleteStudent";
+            this.chkDeleteStudent.Size = new System.Drawing.Size(63, 17);
+            this.chkDeleteStudent.TabIndex = 44;
+            this.chkDeleteStudent.Text = "Delete";
+            this.chkDeleteStudent.UseVisualStyleBackColor = false;
+            this.chkDeleteStudent.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // comboBox3
             // 
@@ -535,13 +535,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Student_form_data;
-            this.ClientSize = new System.Drawing.Size(600, 775);
+            this.ClientSize = new System.Drawing.Size(600, 772);
             this.Controls.Add(this.chkAddStudent);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.checkBox6);
-            this.Controls.Add(this.checkBox5);
-            this.Controls.Add(this.checkBox4);
+            this.Controls.Add(this.chkDeleteStudent);
+            this.Controls.Add(this.chkSearchStudent);
+            this.Controls.Add(this.chkUpDateStudent);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.comboBox7);
             this.Controls.Add(this.checkBox3);
@@ -565,20 +565,20 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblStudentGender);
+            this.Controls.Add(this.lblStudentLName);
+            this.Controls.Add(this.lblStudentName);
             this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblStudentDepartment);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblStudentCourse);
+            this.Controls.Add(this.lblStudentID);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblStudent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(137, 0);
             this.Name = "student_data";
@@ -591,20 +591,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblStudent;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblStudentID;
+        private System.Windows.Forms.Label lblStudentCourse;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblStudentDepartment;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblStudentName;
+        private System.Windows.Forms.Label lblStudentLName;
+        private System.Windows.Forms.Label lblStudentGender;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label10;
@@ -628,9 +628,9 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox chkUpDateStudent;
+        private System.Windows.Forms.CheckBox chkSearchStudent;
+        private System.Windows.Forms.CheckBox chkDeleteStudent;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox chkAddStudent;

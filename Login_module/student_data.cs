@@ -55,7 +55,7 @@ namespace WindowsFormsApplication1
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {   
             //Update
-            if (checkBox4.Checked == true)
+            if (chkUpDateStudent.Checked == true)
             {
                 textBox1.Enabled = false;
                 textBox2.Enabled = true;
@@ -78,8 +78,8 @@ namespace WindowsFormsApplication1
                 button4.Enabled = false;
                 checkBox3.Enabled = false;
                 //Check boxes
-                checkBox5.Checked = false;
-                checkBox6.Checked = false;
+                chkSearchStudent.Checked = false;
+                chkDeleteStudent.Checked = false;
             }
             else
             {
@@ -100,7 +100,7 @@ namespace WindowsFormsApplication1
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
             //Search
-            if (checkBox5.Checked == true)
+            if (chkSearchStudent.Checked == true)
             {
 
                 //Add checkbox
@@ -119,8 +119,8 @@ namespace WindowsFormsApplication1
                 button4.Enabled = false;
                 checkBox3.Enabled = false;
                 //Check boxes
-                checkBox4.Checked = false;
-                checkBox6.Checked = false;
+                chkUpDateStudent.Checked = false;
+                chkDeleteStudent.Checked = false;
             }
             else
             {
@@ -133,7 +133,7 @@ namespace WindowsFormsApplication1
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
             //Delete
-            if (checkBox6.Checked == true)
+            if (chkDeleteStudent.Checked == true)
             {
                 textBox1.Enabled = true;
                 textBox2.Enabled = true;
@@ -158,8 +158,8 @@ namespace WindowsFormsApplication1
                 checkBox2.Enabled = false;
                 comboBox6.Enabled = false;
                 //check boxes
-                checkBox4.Checked = false;
-                checkBox5.Checked = false;
+                chkUpDateStudent.Checked = false;
+                chkSearchStudent.Checked = false;
             }
             else
             {
@@ -266,16 +266,16 @@ namespace WindowsFormsApplication1
                 }
                 if (!flag)
                 {
-                    label2.ForeColor = System.Drawing.Color.Green;
+                    lblStudentID.ForeColor = System.Drawing.Color.Green;
                 }
                 else
                 {
-                    label2.ForeColor = System.Drawing.Color.Red;        
+                    lblStudentID.ForeColor = System.Drawing.Color.Red;        
                 }
             }
             catch
             {
-                label2.ForeColor = System.Drawing.Color.Red;
+                lblStudentID.ForeColor = System.Drawing.Color.Red;
             }
             
         }
@@ -354,12 +354,12 @@ namespace WindowsFormsApplication1
             try
             {
                 long id = long.Parse(input);
-                label2.ForeColor = System.Drawing.Color.Green;
+                lblStudentID.ForeColor = System.Drawing.Color.Green;
             }
             catch
             {
                 textBox1.Focus();
-                label2.ForeColor = System.Drawing.Color.Red;
+                lblStudentID.ForeColor = System.Drawing.Color.Red;
             }
         }
 
@@ -375,12 +375,12 @@ namespace WindowsFormsApplication1
             if (input.Length != 0)
             {
                 if(count == input.Length)
-                label6.ForeColor = System.Drawing.Color.Green;
+                lblStudentName.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
                 textBox2.Focus();
-                label6.ForeColor = System.Drawing.Color.Red;
+                lblStudentName.ForeColor = System.Drawing.Color.Red;
             }
         }
 
@@ -397,13 +397,13 @@ namespace WindowsFormsApplication1
             {
                 if (count == input.Length)
                 {
-                    label7.ForeColor = System.Drawing.Color.Green;
+                    lblStudentLName.ForeColor = System.Drawing.Color.Green;
                 }
             }
             else
             {
                 textBox3.Focus();
-                label7.ForeColor = System.Drawing.Color.Red;
+                lblStudentLName.ForeColor = System.Drawing.Color.Red;
             }
         }
 
@@ -763,9 +763,9 @@ namespace WindowsFormsApplication1
                 }
                 comboBox4.Items.Add("Male");
                 comboBox4.Items.Add("Female");
-                checkBox4.Checked = false;
-                checkBox5.Checked = false;
-                checkBox6.Checked = false;
+                chkUpDateStudent.Checked = false;
+                chkSearchStudent.Checked = false;
+                chkDeleteStudent.Checked = false;
                 button2.Enabled = true;
             }
             else
