@@ -108,7 +108,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-
         private void chkSearchFaculty_CheckedChanged(object sender, EventArgs e)
         {
             //Search
@@ -134,6 +133,7 @@ namespace WindowsFormsApplication1
                 cmbSearchFacultyChooseFromList.Enabled = false;
             }
         }
+
         #endregion
 
         #region "Add Faculty"
@@ -172,7 +172,6 @@ namespace WindowsFormsApplication1
             }
 
         }
-
 
         private void txtFacultyId_Leave(object sender, EventArgs e)
         {
@@ -264,7 +263,6 @@ namespace WindowsFormsApplication1
             }
 
         }
-
 
         private void txtAddress_Leave(object sender, EventArgs e)
         {
@@ -385,7 +383,6 @@ namespace WindowsFormsApplication1
                 lblUpdateFacultyId.ForeColor = System.Drawing.Color.Red;
             }
         }
-
 
         private void cmbUpdateFacultyChooseFromList_SelectedIndexChanged(object sender, EventArgs e)
         {
