@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1.Resources
+namespace AcademicManagementSystem.Resources
 {
     public partial class student_form : Form
     {

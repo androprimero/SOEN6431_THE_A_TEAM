@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
 
-namespace WindowsFormsApplication1
+namespace AcademicManagementSystem
 {
     public partial class student_data : Form
     {

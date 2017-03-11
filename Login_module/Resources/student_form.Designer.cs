@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1.Resources
+﻿namespace AcademicManagementSystem.Resources
 {
     partial class student_form
     {
@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Student_form;
+            this.BackgroundImage = global::AcademicManagementSystem.Properties.Resources.Student_form;
             this.ClientSize = new System.Drawing.Size(784, 962);
             this.Name = "student_form";
             this.Text = "student_form";

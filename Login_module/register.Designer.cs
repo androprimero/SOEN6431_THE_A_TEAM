@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace AcademicManagementSystem
 {
     partial class register
     {
@@ -91,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Student_form_data;
+            this.BackgroundImage = global::AcademicManagementSystem.Properties.Resources.Student_form_data;
             this.ClientSize = new System.Drawing.Size(600, 775);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.label2);

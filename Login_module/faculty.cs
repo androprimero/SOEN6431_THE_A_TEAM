@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
 
-namespace WindowsFormsApplication1
+namespace AcademicManagementSystem
 {
     public partial class faculty : Form
     {
@@ -575,7 +575,12 @@ namespace WindowsFormsApplication1
         }
 
 
-        #endregion 
+        #endregion
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DataLayer.Faculty.FacultyData facultyData = new DataLayer.Faculty.FacultyData();
+            DataLayer.Faculty.FacultyDto facultyDto= facultyData.SelectFacultyByCode(txtSearchFacultyId.Text.Trim());
+        }
     }
 }

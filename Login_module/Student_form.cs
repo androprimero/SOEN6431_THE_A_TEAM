@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace AcademicManagementSystem
 {
     public partial class Student_form : Form
     {
@@ -102,7 +102,7 @@ namespace WindowsFormsApplication1
             Form[] array = this.MdiChildren;
             foreach (Form temp in array)
             {
-                if (temp.GetType().ToString() == "WindowsFormsApplication1." + arr)
+                if (temp.GetType().ToString() == "AcademicManagementSystem." + arr)
                 {
                     flag = true;
                 }

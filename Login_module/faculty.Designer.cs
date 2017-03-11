@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace AcademicManagementSystem
 {
     partial class faculty
     {
@@ -64,6 +64,7 @@
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.lblOffice = new System.Windows.Forms.Label();
             this.cmbOffice = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFacultyForm
@@ -441,12 +442,24 @@
             this.cmbOffice.Size = new System.Drawing.Size(119, 21);
             this.cmbOffice.TabIndex = 135;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(99, 574);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(490, 23);
+            this.btnSearch.TabIndex = 136;
+            this.btnSearch.Text = "Find";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // faculty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Student_form_data;
+            this.BackgroundImage = global::AcademicManagementSystem.Properties.Resources.Student_form_data;
             this.ClientSize = new System.Drawing.Size(600, 775);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cmbOffice);
             this.Controls.Add(this.lblOffice);
             this.Controls.Add(this.txtSalary);
@@ -530,5 +543,6 @@
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Label lblOffice;
         private System.Windows.Forms.ComboBox cmbOffice;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

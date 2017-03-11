@@ -8,7 +8,7 @@
     <ProjectGuid>{BE808579-B002-4909-BB51-94507A0360A7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <RootNamespace>AcademicManagementSystem</RootNamespace>
     <AssemblyName>Login_module</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -46,12 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DatabaseConnection.cs" />
+    <Compile Include="Common\EnumCommonClass.cs" />
     <Compile Include="course.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="course.Designer.cs">
       <DependentUpon>course.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataLayer\ComboBox\ComboBoxDto.cs" />
+    <Compile Include="DataLayer\Faculty\FacultyData.cs" />
+    <Compile Include="DataLayer\Faculty\FacultyDto.cs" />
+    <Compile Include="DataLayer\Person\PersonDto.cs" />
     <Compile Include="department.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,7 @@
     <EmbeddedResource Include="Student_form.resx">
       <DependentUpon>Student_form.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -235,6 +242,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\registration.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BusinessLayer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

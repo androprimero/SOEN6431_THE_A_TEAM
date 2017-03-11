@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace AcademicManagementSystem
 {
     partial class Student_form
     {
@@ -91,7 +91,7 @@
             // btnCourse
             // 
             this.btnCourse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCourse.Image = global::WindowsFormsApplication1.Properties.Resources.button6_normal;
+            this.btnCourse.Image = global::AcademicManagementSystem.Properties.Resources.button6_normal;
             this.btnCourse.Location = new System.Drawing.Point(6, 251);
             this.btnCourse.Name = "btnCourse";
             this.btnCourse.Size = new System.Drawing.Size(130, 42);
@@ -104,7 +104,7 @@
             // btnRegister
             // 
             this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegister.Image = global::WindowsFormsApplication1.Properties.Resources.button4_normal;
+            this.btnRegister.Image = global::AcademicManagementSystem.Properties.Resources.button4_normal;
             this.btnRegister.Location = new System.Drawing.Point(7, 203);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(130, 42);
@@ -117,7 +117,7 @@
             // btnDepartment
             // 
             this.btnDepartment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDepartment.Image = global::WindowsFormsApplication1.Properties.Resources.button3_normal;
+            this.btnDepartment.Image = global::AcademicManagementSystem.Properties.Resources.button3_normal;
             this.btnDepartment.Location = new System.Drawing.Point(7, 155);
             this.btnDepartment.Name = "btnDepartment";
             this.btnDepartment.Size = new System.Drawing.Size(130, 42);
@@ -130,7 +130,7 @@
             // btnFaculty
             // 
             this.btnFaculty.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFaculty.Image = global::WindowsFormsApplication1.Properties.Resources.button2_normal;
+            this.btnFaculty.Image = global::AcademicManagementSystem.Properties.Resources.button2_normal;
             this.btnFaculty.Location = new System.Drawing.Point(7, 107);
             this.btnFaculty.Name = "btnFaculty";
             this.btnFaculty.Size = new System.Drawing.Size(130, 42);
@@ -143,7 +143,7 @@
             // btnStudent
             // 
             this.btnStudent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStudent.Image = global::WindowsFormsApplication1.Properties.Resources.button1_normal1;
+            this.btnStudent.Image = global::AcademicManagementSystem.Properties.Resources.button1_normal1;
             this.btnStudent.Location = new System.Drawing.Point(7, 59);
             this.btnStudent.Name = "btnStudent";
             this.btnStudent.Size = new System.Drawing.Size(130, 42);
@@ -175,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Student_form;
+            this.BackgroundImage = global::AcademicManagementSystem.Properties.Resources.Student_form;
             this.ClientSize = new System.Drawing.Size(750, 772);
             this.Controls.Add(this.imgIcon);
             this.Controls.Add(this.imgMessage);

@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace AcademicManagementSystem
 {
     partial class Login
     {
@@ -47,7 +47,7 @@
             // 
             // Login_button
             // 
-            this.Login_button.Image = global::WindowsFormsApplication1.Properties.Resources.Login_button;
+            this.Login_button.Image = global::AcademicManagementSystem.Properties.Resources.Login_button;
             this.Login_button.Location = new System.Drawing.Point(193, 403);
             this.Login_button.Name = "Login_button";
             this.Login_button.Size = new System.Drawing.Size(411, 62);
@@ -82,7 +82,7 @@
             // 
             // close_button
             // 
-            this.close_button.Image = global::WindowsFormsApplication1.Properties.Resources.close_normal;
+            this.close_button.Image = global::AcademicManagementSystem.Properties.Resources.close_normal;
             this.close_button.Location = new System.Drawing.Point(754, 4);
             this.close_button.Name = "close_button";
             this.close_button.Size = new System.Drawing.Size(20, 20);
@@ -94,7 +94,7 @@
             // 
             // Minimize_button
             // 
-            this.Minimize_button.Image = global::WindowsFormsApplication1.Properties.Resources.minimize_normal;
+            this.Minimize_button.Image = global::AcademicManagementSystem.Properties.Resources.minimize_normal;
             this.Minimize_button.Location = new System.Drawing.Point(728, 4);
             this.Minimize_button.Name = "Minimize_button";
             this.Minimize_button.Size = new System.Drawing.Size(20, 20);
@@ -156,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.login;
+            this.BackgroundImage = global::AcademicManagementSystem.Properties.Resources.login;
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label6);

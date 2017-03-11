@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace AcademicManagementSystem
 {
     partial class department
     {
@@ -482,7 +482,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Student_form_data;
+            this.BackgroundImage = global::AcademicManagementSystem.Properties.Resources.Student_form_data;
             this.ClientSize = new System.Drawing.Size(600, 775);
             this.Controls.Add(this.lblDepartmentClass);
             this.Controls.Add(this.txtDeptClass);
