@@ -27,6 +27,7 @@ namespace AcademicManagementSystem.DataLayer.ComboBox
         public List<ComboBoxDto> SelectGenderData()
         {
             List<ComboBoxDto> comboBoxDtoList = new List<ComboBoxDto>();
+            comboBoxDtoList.Add(new ComboBoxDto("", ""));
             foreach (var gender in Enum.GetValues(typeof(EnumCommonClass.Gender)))
             {
                 comboBoxDtoList.Add(new ComboBoxDto(gender.ToString(), gender.ToString()));
@@ -42,6 +43,7 @@ namespace AcademicManagementSystem.DataLayer.ComboBox
         {
 
             List<ComboBoxDto> comboBoxDtoList = new List<ComboBoxDto>();
+            comboBoxDtoList.Add(new ComboBoxDto("", ""));
             query = SelectFacultyMemberQuery();
             object reader = dbConnect.SelectCollectionDataReader(query);
             if(reader !=null && ((DataTable)reader).Rows.Count>0)
@@ -61,6 +63,7 @@ namespace AcademicManagementSystem.DataLayer.ComboBox
         {
 
             List<ComboBoxDto> comboBoxDtoList = new List<ComboBoxDto>();
+            comboBoxDtoList.Add(new ComboBoxDto("", ""));
             query = SelectStudentsQuery();
             object reader = dbConnect.SelectCollectionDataReader(query);
             if (reader != null && ((DataTable)reader).Rows.Count > 0)
@@ -79,6 +82,7 @@ namespace AcademicManagementSystem.DataLayer.ComboBox
         public List<ComboBoxDto> SelectDepartmentData()
         {
             List<ComboBoxDto> comboBoxDtoList = new List<ComboBoxDto>();
+            comboBoxDtoList.Add(new ComboBoxDto("", ""));
             query = SelectDepartmentQuery();
             object reader = dbConnect.SelectCollectionDataReader(query);
             if (reader != null && ((DataTable)reader).Rows.Count > 0)
@@ -100,7 +104,7 @@ namespace AcademicManagementSystem.DataLayer.ComboBox
 						   p.personCode AS Code
                          ,IIF(ISNULL([p.fname]), '', [p.fname]) +' '+ IIF(ISNULL([p.lname]), '', [p.lname]) + ' (' + p.personCode + ')'   AS Description
                      FROM PERSON p
-                    where   p.personType=2";
+                    where   p.personType=1";
         }
 
 
@@ -110,7 +114,7 @@ namespace AcademicManagementSystem.DataLayer.ComboBox
 						   p.personCode AS Code
                          ,IIF(ISNULL([p.fname]), '', [p.fname]) +' '+ IIF(ISNULL([p.lname]), '', [p.lname]) + ' (' + p.personCode + ')'   AS Description
                      FROM PERSON p
-                    where   p.personType=1";
+                    where   p.personType=2";
         }
 
         private String SelectDepartmentQuery()

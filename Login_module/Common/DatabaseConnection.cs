@@ -31,24 +31,31 @@ namespace AcademicManagementSystem.Common
             conectionObject.Close();
         }
 
-        public bool ExecuteQueries(string strQuery)
+        public int ExecuteQueries(string query, bool getInsertId)
         {
+            int pkId=0;
             try
             {
                 OpenConection();
-                OleDbCommand cmd = new OleDbCommand(strQuery, conectionObject);
+                OleDbCommand cmd = new OleDbCommand(query, conectionObject);
                 cmd.ExecuteNonQuery();
-                return true;
+                if(getInsertId)
+                {
+                    cmd.CommandText = _queryInsertId;
+                    pkId = (int)cmd.ExecuteScalar();
+                }
+                return pkId;
             }
             catch (Exception ex)
             {
                 //Later release should Log the Exception
-                return false;
+                return -1;
             }
         }
 
         public OleDbDataReader SelectDataReader(string query)
         {
+            
             try
             {
                 OpenConection();
@@ -88,7 +95,7 @@ namespace AcademicManagementSystem.Common
         #region 'Private Variable'
 
         private readonly string _connectionStringValue = Properties.Settings.Default["ConnectionString"].ToString();
-
+        private readonly string _queryInsertId = "Select @@Identity";
         #endregion
 
         #region 'Private Methods'

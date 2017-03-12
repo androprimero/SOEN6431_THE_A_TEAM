@@ -5,5 +5,11 @@
     <Setting Name="ConnectionString" Type="System.String" Scope="User">
       <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0}\\university.accdb;Persist Security Info=False;</Value>
     </Setting>
+    <Setting Name="FacultyCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">512</Value>
+    </Setting>
+    <Setting Name="StudentCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">232</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -74,6 +74,7 @@
     <Compile Include="DataLayer\ComboBox\ComboBoxDto.cs" />
     <Compile Include="DataLayer\Faculty\FacultyData.cs" />
     <Compile Include="DataLayer\Faculty\FacultyDto.cs" />
+    <Compile Include="DataLayer\Person\PersonData.cs" />
     <Compile Include="DataLayer\Person\PersonDto.cs" />
     <Compile Include="department.cs">
       <SubType>Form</SubType>

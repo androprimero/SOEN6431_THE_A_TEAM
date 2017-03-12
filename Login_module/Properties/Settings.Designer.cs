@@ -35,5 +35,29 @@ namespace AcademicManagementSystem.Properties {
                 this["ConnectionString"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("512")]
+        public string FacultyCode {
+            get {
+                return ((string)(this["FacultyCode"]));
+            }
+            set {
+                this["FacultyCode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("232")]
+        public string StudentCode {
+            get {
+                return ((string)(this["StudentCode"]));
+            }
+            set {
+                this["StudentCode"] = value;
+            }
+        }
     }
 }

@@ -579,10 +579,11 @@ namespace AcademicManagementSystem
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataLayer.Faculty.FacultyData facultyData = new DataLayer.Faculty.FacultyData();
-            DataLayer.Faculty.FacultyDto facultyDto= facultyData.SelectFacultyByCode(txtSearchFacultyId.Text.Trim());
-            TestForm frm = new TestForm();
-            frm.Show();
+            //DataLayer.Faculty.FacultyData facultyData = new DataLayer.Faculty.FacultyData();
+            //DataLayer.Faculty.FacultyDto facultyDto= facultyData.SelectFacultyByCode(txtSearchFacultyId.Text.Trim());
+
+           // TestForm frm = new TestForm();
+          //  frm.Show();
         }
     }
 }

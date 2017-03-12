@@ -27,5 +27,12 @@ namespace AcademicManagementSystem
             comboBoxBinding.LoadFacultyComboBox(cmbFaculty);
             comboBoxBinding.LoadStudentComboBox(cmbStudent);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataLayer.Person.PersonData personData = new DataLayer.Person.PersonData();
+            DataLayer.Person.PersonDto person = new DataLayer.Person.PersonDto("321456", "FirstName1", "LastName1", DateTime.Parse("1990-10-01").Date, 123, "Male", "Address", 2);
+            int id = personData.InsertPerson(person);
+        }
     }
 }
