@@ -24,7 +24,7 @@ namespace AcademicManagementSystem.DataLayer.Faculty
             try
             {
                 facultyDto = new FacultyDto();
-                query = SelectFacultyByIdQuery(code);
+                query = SelectFacultyByCodeQuery(code);
                 OleDbDataReader reader = dbConnect.SelectDataReader(query);
 
                 if (reader.Read() && reader.GetValue(0) != DBNull.Value)
@@ -66,10 +66,9 @@ namespace AcademicManagementSystem.DataLayer.Faculty
 
         #region 'Private Queries'
 
-        private String SelectFacultyByIdQuery(string code)
+        private String SelectFacultyByCodeQuery(string code)
         {
-            return @"SELECT 
-                        
+            return @"SELECT
                        f.facultyId 
                        , f.office as foffice
                        , f.salary as fSal

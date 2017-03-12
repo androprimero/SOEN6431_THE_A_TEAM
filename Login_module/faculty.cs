@@ -581,6 +581,8 @@ namespace AcademicManagementSystem
         {
             DataLayer.Faculty.FacultyData facultyData = new DataLayer.Faculty.FacultyData();
             DataLayer.Faculty.FacultyDto facultyDto= facultyData.SelectFacultyByCode(txtSearchFacultyId.Text.Trim());
+            TestForm frm = new TestForm();
+            frm.Show();
         }
     }
 }

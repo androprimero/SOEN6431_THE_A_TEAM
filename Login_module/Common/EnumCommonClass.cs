@@ -2,7 +2,7 @@
 
 namespace AcademicManagementSystem.Common
 {
-    public class EnumCommonClass
+    public static class EnumCommonClass
     {
 
         public enum PersonType
@@ -13,8 +13,8 @@ namespace AcademicManagementSystem.Common
 
         public enum Gender
         {
-            Male=0,
-            Female=1            
+            Male = 0,
+            Female = 1
         };
     }
 }

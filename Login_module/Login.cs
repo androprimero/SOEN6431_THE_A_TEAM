@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using AcademicManagementSystem.UserInterface;
 
 namespace AcademicManagementSystem
 {
@@ -17,83 +18,59 @@ namespace AcademicManagementSystem
 
         }
 
-        private void Login_button_MouseHover(object sender, EventArgs e)
-        {
-            Login_button.Image = Properties.Resources.onmouse_over;
-        }
 
         private void Login_button_Click(object sender, EventArgs e)
         {
-            if (Username.Text == "admin" && Password.Text == "123")
+            ValidateLoginIn();
+        }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                Student_form std = new Student_form();
-                std.Show();
-                this.Hide();
+                ValidateLoginIn();
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                ValidateLoginIn();
+            }
+        }
+
+
+        private void ValidateLoginIn()
+        {
+            if (ValidateRequiredFields())
+                {
+                if (txtUsername.Text == "admin" && txtPassword.Text == "123")
+                {
+                    //Student_form std = new Student_form();
+                    MainForm frm = new MainForm();
+                    frm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    lblError.Text = "Sorry, but the credentials you have provided seems to be incorrect";
+                }
+            }
+        }
+
+        private bool ValidateRequiredFields()
+        {
+            if (string.IsNullOrEmpty(txtUsername.Text.Trim()) ||
+               string.IsNullOrEmpty(txtPassword.Text.Trim()))
+            {
+                lblError.Text = "Sorry, but you should provide both username and password";
+                return false;
             }
             else
             {
-                MessageBox.Show("Login Error");
+                return true;
             }
         }
-
-        private void Login_button_MouseLeave(object sender, EventArgs e)
-        {
-            Login_button.Image = Properties.Resources.Login_button;
-        }
-
-        private void close_button_MouseHover(object sender, EventArgs e)
-        {
-            close_button.Image = Properties.Resources.close;
-        }
-
-        private void close_button_MouseLeave(object sender, EventArgs e)
-        {
-            close_button.Image = Properties.Resources.close_normal;
-        }
-
-        private void close_button_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void Minimize_button_MouseHover(object sender, EventArgs e)
-        {
-            Minimize_button.Image = Properties.Resources.minimize;
-        }
-
-        private void Minimize_button_MouseLeave(object sender, EventArgs e)
-        {
-            Minimize_button.Image = Properties.Resources.minimize_normal;
-        }
-
-        private void Minimize_button_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-            progressBar1.Value = 0;
-            progressBar1.Minimum = 0;
-
-            progressBar1.Maximum = 100;
-            progressBar1.Step = 1;
-            
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (progressBar1.Value <= progressBar1.Maximum)
-            {
-                progressBar1.PerformStep();
-            }
-            else
-            {
-                timer1.Enabled = false;
-                timer1.Dispose();
-            }
-        }
-
     }
 }
