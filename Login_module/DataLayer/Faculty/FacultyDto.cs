@@ -10,10 +10,10 @@ namespace AcademicManagementSystem.DataLayer.Faculty
     {
         #region Properties
 
-        public int FacultyId { get; set; }
+        public Int64 FacultyId { get; set; }
         public string Office { get; set; }
         public double Salary { get; set; }
-        public int ContactNo { get; set; }
+        public Int64 ContactNo { get; set; }
         public PersonDto Person { get; set; }
 
         public FacultyDto()
@@ -21,7 +21,7 @@ namespace AcademicManagementSystem.DataLayer.Faculty
              
         }
 
-        public FacultyDto(int _facultyId, string _office, double _salary, int _contactNo, PersonDto _person)
+        public FacultyDto(long _facultyId, string _office, double _salary, long _contactNo, PersonDto _person)
         {
             FacultyId = _facultyId;
             Office = _office;

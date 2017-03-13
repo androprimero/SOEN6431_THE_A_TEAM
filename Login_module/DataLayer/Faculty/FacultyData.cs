@@ -17,14 +17,18 @@ namespace AcademicManagementSystem.DataLayer.Faculty
         private String query = "";
         #endregion 
 
-        //Get FacultyData
-        public FacultyDto SelectFacultyByCode(string code)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="facultyId"></param>
+        /// <returns></returns>
+        public FacultyDto SelectFacultyById(int facultyId)
         {
             FacultyDto facultyDto;
             try
             {
                 facultyDto = new FacultyDto();
-                query = SelectFacultyByCodeQuery(code);
+                query = SelectFacultyByCodeQuery(facultyId);
                 OleDbDataReader reader = dbConnect.SelectDataReader(query);
 
                 if (reader.Read() && reader.GetValue(0) != DBNull.Value)
@@ -33,21 +37,11 @@ namespace AcademicManagementSystem.DataLayer.Faculty
                     facultyDto.Office = reader.GetString(1);
                     facultyDto.Salary = reader.GetInt32(2);
                     facultyDto.ContactNo = reader.GetInt32(3);
-
                     //Person Info
-                    PersonDto personDto = new PersonDto();
-                    personDto.PersonCode = code;
-                    personDto.PersonId = reader.GetInt32(4);
-                    personDto.Firstname = reader.GetString(5);
-                    personDto.Lastname = reader.GetString(6);
-                    personDto.Gender = reader.GetString(7);
-                    personDto.DateOfBirth = reader.GetDateTime(8);
-                    personDto.PostalCode = reader.GetInt32(9);
-                    personDto.Address = reader.GetString(10);
+                    PersonData personData = new PersonData();
+                    PersonDto personDto = personData.SelectPersonById(facultyId);
                     facultyDto.Person = personDto;
                 }
-                
-               
             }
             catch (Exception ex)
             {
@@ -58,32 +52,106 @@ namespace AcademicManagementSystem.DataLayer.Faculty
             {
                 dbConnect.CloseConnection();
             }
-
             return facultyDto;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="facultyDto"></param>
+        /// <returns></returns>
+        public int InsertFaculty(FacultyDto facultyDto)
+        {
+            int returnedValue = 0;
+            try
+            {
+                PersonData personData = new PersonData();
+                returnedValue = personData.InsertPerson(facultyDto.Person);
+                if (returnedValue > -1)
+                {
+                    query = InsertFacultyQuery(facultyDto);
+                    returnedValue = dbConnect.ExecuteQueries(query, false);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
+            finally
+            {
+                dbConnect.CloseConnection();
+            }
 
+            return returnedValue;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="facultyDto"></param>
+        /// <returns></returns>
+        public int UpdateFaculty(FacultyDto facultyDto)
+        {
+            int returnedValue = 0;
+            try
+            {
+                PersonData personData = new PersonData();
+                returnedValue = personData.UpdatePerson(facultyDto.Person);
+                if (returnedValue > -1)
+                {
+                    query = UpdateFacultyQuery(facultyDto);
+                    returnedValue = dbConnect.ExecuteQueries(query, false);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
+            finally
+            {
+                dbConnect.CloseConnection();
+            }
+
+            return returnedValue;
+        }
 
         #region 'Private Queries'
 
-        private String SelectFacultyByCodeQuery(string code)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="facultyId"></param>
+        /// <returns></returns>
+        private String SelectFacultyByCodeQuery(int facultyId)
         {
-            return @"SELECT
-                       f.facultyId 
-                       , f.office as foffice
-                       , f.salary as fSal
-                       , f.contactNo as fCon 
-                       , p.PersonId 
-                       , p.fname as perfname
-                       , p.lname as perlname
-                       , p.gender as pergen
-                       , p.dob as perdob 
-                       , p.postalcode as perpost
-                       , p.address as peradd 
-                            FROM PERSON p, Faculty f 
-                    where p.PersonId = f.PersonId 
-                    and p.personCode='" + code + "'";
+            return @" SELECT f.facultyId, f.office, f.salary , f.contactNo 
+                            FROM   Faculty f 
+                        WHERE f.facultyId = " + facultyId;
 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="facultyDto"></param>
+        /// <returns></returns>
+        private String InsertFacultyQuery(FacultyDto facultyDto)
+        {
+            return @"INSERT INTO faculty
+                     (facultyid, office, salary, contactNo) VALUES 
+                     (" + facultyDto.FacultyId + ",'" + facultyDto.Office + "'," + facultyDto.Salary + "," + facultyDto.ContactNo + ")";
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="facultyDto"></param>
+        /// <returns></returns>
+        private String UpdateFacultyQuery(FacultyDto facultyDto)
+        {
+            return @"UPDATE faculty SET   salary = " + facultyDto.Salary + ", contactNo = " + facultyDto.ContactNo + "   WHERE facultyid = " + facultyDto.FacultyId;
         }
 
         #endregion

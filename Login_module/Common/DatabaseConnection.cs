@@ -49,6 +49,7 @@ namespace AcademicManagementSystem.Common
             catch (Exception ex)
             {
                 //Later release should Log the Exception
+                MessageBox.Show(ex.Message);
                 return -1;
             }
         }
@@ -85,6 +86,7 @@ namespace AcademicManagementSystem.Common
             catch (Exception ex)
             {
                 //Later release should Log the Exception
+                MessageBox.Show(ex.Message);
                 return null;
             }
 

@@ -9,8 +9,7 @@ namespace AcademicManagementSystem.DataLayer.Person
     {
         #region Properties
 
-        public int PersonId { get; set; }
-        public string PersonCode { get; set; }
+        public Int64 PersonId { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public DateTime DateOfBirth { get; set; }
@@ -24,25 +23,11 @@ namespace AcademicManagementSystem.DataLayer.Person
         {
 
         }
-
-        public PersonDto(string _personCode, string _firstname, string _lastname,
-          DateTime _dateofBirth, int _postalCode, string _gender, string _address, int _personType)
-        {
-            PersonCode = _personCode;
-            Firstname = _firstname;
-            Lastname = _lastname;
-            DateOfBirth = _dateofBirth;
-            PostalCode = _postalCode;
-            Gender = _gender;
-            Address = _address;
-            PersonType = _personType;
-        }
-
-        public PersonDto(int _personId, string _personCode, string _firstname, string _lastname,
+        
+        public PersonDto(long _personId,  string _firstname, string _lastname,
            DateTime _dateofBirth, int _postalCode, string _gender, string _address, int _personType)
         {
             PersonId = _personId;
-            PersonCode = _personCode;
             Firstname = _firstname;
             Lastname = _lastname;
             DateOfBirth = _dateofBirth;

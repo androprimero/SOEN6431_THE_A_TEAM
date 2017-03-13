@@ -29,7 +29,19 @@
         private void InitializeComponent()
         {
             this.pnlFacultyBody = new System.Windows.Forms.Panel();
+            this.pnlMessageInfo = new System.Windows.Forms.Panel();
+            this.imgOops = new System.Windows.Forms.PictureBox();
+            this.imgWow = new System.Windows.Forms.PictureBox();
+            this.lblSuccess = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
             this.pnlForm = new System.Windows.Forms.Panel();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.lblRequiredMessage = new System.Windows.Forms.Label();
+            this.lblRequired5 = new System.Windows.Forms.Label();
+            this.lblRequired4 = new System.Windows.Forms.Label();
+            this.lblRequired3 = new System.Windows.Forms.Label();
+            this.lblRequired2 = new System.Windows.Forms.Label();
+            this.lblRequired1 = new System.Windows.Forms.Label();
             this.txtFacultyId = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -65,8 +77,10 @@
             this.lblOperation = new System.Windows.Forms.Label();
             this.pnlFormTitle = new System.Windows.Forms.Panel();
             this.lblFacultyForm = new System.Windows.Forms.Label();
-            this.lblError = new System.Windows.Forms.Label();
             this.pnlFacultyBody.SuspendLayout();
+            this.pnlMessageInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgOops)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgWow)).BeginInit();
             this.pnlForm.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             this.pnlOperations.SuspendLayout();
@@ -76,7 +90,7 @@
             // pnlFacultyBody
             // 
             this.pnlFacultyBody.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnlFacultyBody.Controls.Add(this.lblError);
+            this.pnlFacultyBody.Controls.Add(this.pnlMessageInfo);
             this.pnlFacultyBody.Controls.Add(this.pnlForm);
             this.pnlFacultyBody.Controls.Add(this.pnlSearch);
             this.pnlFacultyBody.Controls.Add(this.pnlOperations);
@@ -87,9 +101,66 @@
             this.pnlFacultyBody.Size = new System.Drawing.Size(784, 561);
             this.pnlFacultyBody.TabIndex = 0;
             // 
+            // pnlMessageInfo
+            // 
+            this.pnlMessageInfo.Controls.Add(this.imgOops);
+            this.pnlMessageInfo.Controls.Add(this.imgWow);
+            this.pnlMessageInfo.Controls.Add(this.lblSuccess);
+            this.pnlMessageInfo.Controls.Add(this.lblError);
+            this.pnlMessageInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMessageInfo.Location = new System.Drawing.Point(0, 396);
+            this.pnlMessageInfo.Name = "pnlMessageInfo";
+            this.pnlMessageInfo.Size = new System.Drawing.Size(784, 165);
+            this.pnlMessageInfo.TabIndex = 1003;
+            // 
+            // imgOops
+            // 
+            this.imgOops.Image = global::AcademicManagementSystem.Properties.Resources.oops;
+            this.imgOops.Location = new System.Drawing.Point(0, 0);
+            this.imgOops.Name = "imgOops";
+            this.imgOops.Size = new System.Drawing.Size(100, 64);
+            this.imgOops.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgOops.TabIndex = 1003;
+            this.imgOops.TabStop = false;
+            // 
+            // imgWow
+            // 
+            this.imgWow.Image = global::AcademicManagementSystem.Properties.Resources.wow;
+            this.imgWow.Location = new System.Drawing.Point(0, 0);
+            this.imgWow.Name = "imgWow";
+            this.imgWow.Size = new System.Drawing.Size(100, 64);
+            this.imgWow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgWow.TabIndex = 0;
+            this.imgWow.TabStop = false;
+            // 
+            // lblSuccess
+            // 
+            this.lblSuccess.AutoSize = true;
+            this.lblSuccess.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblSuccess.Location = new System.Drawing.Point(104, 24);
+            this.lblSuccess.Name = "lblSuccess";
+            this.lblSuccess.Size = new System.Drawing.Size(0, 16);
+            this.lblSuccess.TabIndex = 1002;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(104, 24);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 16);
+            this.lblError.TabIndex = 1001;
+            // 
             // pnlForm
             // 
             this.pnlForm.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlForm.Controls.Add(this.btnReset);
+            this.pnlForm.Controls.Add(this.lblRequiredMessage);
+            this.pnlForm.Controls.Add(this.lblRequired5);
+            this.pnlForm.Controls.Add(this.lblRequired4);
+            this.pnlForm.Controls.Add(this.lblRequired3);
+            this.pnlForm.Controls.Add(this.lblRequired2);
+            this.pnlForm.Controls.Add(this.lblRequired1);
             this.pnlForm.Controls.Add(this.txtFacultyId);
             this.pnlForm.Controls.Add(this.txtFirstName);
             this.pnlForm.Controls.Add(this.btnSubmit);
@@ -117,6 +188,83 @@
             this.pnlForm.Size = new System.Drawing.Size(784, 266);
             this.pnlForm.TabIndex = 1000;
             // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(496, 224);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(120, 28);
+            this.btnReset.TabIndex = 1030;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // lblRequiredMessage
+            // 
+            this.lblRequiredMessage.AutoSize = true;
+            this.lblRequiredMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblRequiredMessage.Location = new System.Drawing.Point(16, 224);
+            this.lblRequiredMessage.Name = "lblRequiredMessage";
+            this.lblRequiredMessage.Size = new System.Drawing.Size(125, 16);
+            this.lblRequiredMessage.TabIndex = 1008;
+            this.lblRequiredMessage.Text = "* Required Fields ";
+            // 
+            // lblRequired5
+            // 
+            this.lblRequired5.BackColor = System.Drawing.Color.Transparent;
+            this.lblRequired5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRequired5.ForeColor = System.Drawing.Color.Red;
+            this.lblRequired5.Location = new System.Drawing.Point(472, 184);
+            this.lblRequired5.Name = "lblRequired5";
+            this.lblRequired5.Size = new System.Drawing.Size(14, 16);
+            this.lblRequired5.TabIndex = 1007;
+            this.lblRequired5.Text = "*";
+            // 
+            // lblRequired4
+            // 
+            this.lblRequired4.BackColor = System.Drawing.Color.Transparent;
+            this.lblRequired4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRequired4.ForeColor = System.Drawing.Color.Red;
+            this.lblRequired4.Location = new System.Drawing.Point(80, 184);
+            this.lblRequired4.Name = "lblRequired4";
+            this.lblRequired4.Size = new System.Drawing.Size(14, 16);
+            this.lblRequired4.TabIndex = 1016;
+            this.lblRequired4.Text = "*";
+            // 
+            // lblRequired3
+            // 
+            this.lblRequired3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRequired3.ForeColor = System.Drawing.Color.Red;
+            this.lblRequired3.Location = new System.Drawing.Point(80, 104);
+            this.lblRequired3.Name = "lblRequired3";
+            this.lblRequired3.Size = new System.Drawing.Size(14, 16);
+            this.lblRequired3.TabIndex = 1005;
+            this.lblRequired3.Text = "*";
+            // 
+            // lblRequired2
+            // 
+            this.lblRequired2.BackColor = System.Drawing.Color.Transparent;
+            this.lblRequired2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRequired2.ForeColor = System.Drawing.Color.Red;
+            this.lblRequired2.Location = new System.Drawing.Point(80, 64);
+            this.lblRequired2.Name = "lblRequired2";
+            this.lblRequired2.Size = new System.Drawing.Size(14, 16);
+            this.lblRequired2.TabIndex = 1004;
+            this.lblRequired2.Text = "*";
+            // 
+            // lblRequired1
+            // 
+            this.lblRequired1.BackColor = System.Drawing.Color.Transparent;
+            this.lblRequired1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRequired1.ForeColor = System.Drawing.Color.Red;
+            this.lblRequired1.Location = new System.Drawing.Point(472, 24);
+            this.lblRequired1.Name = "lblRequired1";
+            this.lblRequired1.Size = new System.Drawing.Size(14, 16);
+            this.lblRequired1.TabIndex = 1003;
+            this.lblRequired1.Text = "*";
+            // 
             // txtFacultyId
             // 
             this.txtFacultyId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -126,7 +274,7 @@
             this.txtFacultyId.MaxLength = 10;
             this.txtFacultyId.Name = "txtFacultyId";
             this.txtFacultyId.Size = new System.Drawing.Size(267, 23);
-            this.txtFacultyId.TabIndex = 136;
+            this.txtFacultyId.TabIndex = 1002;
             // 
             // txtFirstName
             // 
@@ -136,7 +284,7 @@
             this.txtFirstName.MaxLength = 15;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(267, 23);
-            this.txtFirstName.TabIndex = 137;
+            this.txtFirstName.TabIndex = 1005;
             // 
             // btnSubmit
             // 
@@ -146,9 +294,10 @@
             this.btnSubmit.Location = new System.Drawing.Point(640, 224);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(120, 28);
-            this.btnSubmit.TabIndex = 134;
+            this.btnSubmit.TabIndex = 1040;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // cmbOffice
             // 
@@ -160,7 +309,7 @@
             this.cmbOffice.Location = new System.Drawing.Point(99, 140);
             this.cmbOffice.Name = "cmbOffice";
             this.cmbOffice.Size = new System.Drawing.Size(267, 24);
-            this.cmbOffice.TabIndex = 155;
+            this.cmbOffice.TabIndex = 1013;
             // 
             // txtLastName
             // 
@@ -170,7 +319,7 @@
             this.txtLastName.MaxLength = 15;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(267, 23);
-            this.txtLastName.TabIndex = 138;
+            this.txtLastName.TabIndex = 1009;
             // 
             // lblOffice
             // 
@@ -181,7 +330,7 @@
             this.lblOffice.Location = new System.Drawing.Point(0, 144);
             this.lblOffice.Name = "lblOffice";
             this.lblOffice.Size = new System.Drawing.Size(58, 16);
-            this.lblOffice.TabIndex = 154;
+            this.lblOffice.TabIndex = 1012;
             this.lblOffice.Text = "Office: ";
             // 
             // dtpDoB
@@ -191,17 +340,17 @@
             this.dtpDoB.Location = new System.Drawing.Point(488, 140);
             this.dtpDoB.Name = "dtpDoB";
             this.dtpDoB.Size = new System.Drawing.Size(288, 23);
-            this.dtpDoB.TabIndex = 139;
+            this.dtpDoB.TabIndex = 1015;
             // 
             // txtSalary
             // 
             this.txtSalary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSalary.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalary.Location = new System.Drawing.Point(488, 60);
-            this.txtSalary.MaxLength = 10;
+            this.txtSalary.MaxLength = 6;
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(288, 23);
-            this.txtSalary.TabIndex = 153;
+            this.txtSalary.TabIndex = 1007;
             // 
             // lblFacultyId
             // 
@@ -212,7 +361,7 @@
             this.lblFacultyId.Location = new System.Drawing.Point(1, 28);
             this.lblFacultyId.Name = "lblFacultyId";
             this.lblFacultyId.Size = new System.Drawing.Size(80, 16);
-            this.lblFacultyId.TabIndex = 140;
+            this.lblFacultyId.TabIndex = 1001;
             this.lblFacultyId.Text = "Faculty Id:";
             // 
             // txtContactNo
@@ -220,10 +369,10 @@
             this.txtContactNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContactNo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContactNo.Location = new System.Drawing.Point(488, 24);
-            this.txtContactNo.MaxLength = 15;
+            this.txtContactNo.MaxLength = 9;
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(288, 23);
-            this.txtContactNo.TabIndex = 152;
+            this.txtContactNo.TabIndex = 1004;
             // 
             // lblSalary
             // 
@@ -234,7 +383,7 @@
             this.lblSalary.Location = new System.Drawing.Point(384, 64);
             this.lblSalary.Name = "lblSalary";
             this.lblSalary.Size = new System.Drawing.Size(60, 16);
-            this.lblSalary.TabIndex = 141;
+            this.lblSalary.TabIndex = 1006;
             this.lblSalary.Text = "Salary: ";
             // 
             // lblPostalCode
@@ -246,7 +395,7 @@
             this.lblPostalCode.Location = new System.Drawing.Point(384, 184);
             this.lblPostalCode.Name = "lblPostalCode";
             this.lblPostalCode.Size = new System.Drawing.Size(97, 16);
-            this.lblPostalCode.TabIndex = 151;
+            this.lblPostalCode.TabIndex = 1018;
             this.lblPostalCode.Text = "Postal Code: ";
             // 
             // lblContactNo
@@ -258,7 +407,7 @@
             this.lblContactNo.Location = new System.Drawing.Point(384, 28);
             this.lblContactNo.Name = "lblContactNo";
             this.lblContactNo.Size = new System.Drawing.Size(87, 16);
-            this.lblContactNo.TabIndex = 142;
+            this.lblContactNo.TabIndex = 1003;
             this.lblContactNo.Text = "Contact #: ";
             // 
             // txtPostalCode
@@ -269,7 +418,7 @@
             this.txtPostalCode.MaxLength = 6;
             this.txtPostalCode.Name = "txtPostalCode";
             this.txtPostalCode.Size = new System.Drawing.Size(288, 23);
-            this.txtPostalCode.TabIndex = 150;
+            this.txtPostalCode.TabIndex = 1020;
             // 
             // cmbGender
             // 
@@ -281,7 +430,7 @@
             this.cmbGender.Location = new System.Drawing.Point(488, 100);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(288, 24);
-            this.cmbGender.TabIndex = 143;
+            this.cmbGender.TabIndex = 1011;
             // 
             // lblAddress
             // 
@@ -292,7 +441,7 @@
             this.lblAddress.Location = new System.Drawing.Point(0, 184);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(71, 16);
-            this.lblAddress.TabIndex = 149;
+            this.lblAddress.TabIndex = 1016;
             this.lblAddress.Text = "Address: ";
             // 
             // lblFirstName
@@ -304,7 +453,7 @@
             this.lblFirstName.Location = new System.Drawing.Point(1, 64);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(89, 16);
-            this.lblFirstName.TabIndex = 144;
+            this.lblFirstName.TabIndex = 1005;
             this.lblFirstName.Text = "First Name: ";
             // 
             // txtAddress
@@ -315,7 +464,7 @@
             this.txtAddress.MaxLength = 50;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(267, 23);
-            this.txtAddress.TabIndex = 148;
+            this.txtAddress.TabIndex = 1017;
             // 
             // lblLastName
             // 
@@ -326,7 +475,7 @@
             this.lblLastName.Location = new System.Drawing.Point(1, 104);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(88, 16);
-            this.lblLastName.TabIndex = 145;
+            this.lblLastName.TabIndex = 1008;
             this.lblLastName.Text = "Last Name: ";
             // 
             // lblDoB
@@ -338,7 +487,7 @@
             this.lblDoB.Location = new System.Drawing.Point(384, 144);
             this.lblDoB.Name = "lblDoB";
             this.lblDoB.Size = new System.Drawing.Size(44, 16);
-            this.lblDoB.TabIndex = 147;
+            this.lblDoB.TabIndex = 1014;
             this.lblDoB.Text = "DoB: ";
             // 
             // lblGender
@@ -350,7 +499,7 @@
             this.lblGender.Location = new System.Drawing.Point(384, 104);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(65, 16);
-            this.lblGender.TabIndex = 146;
+            this.lblGender.TabIndex = 1010;
             this.lblGender.Text = "Gender: ";
             // 
             // pnlSearch
@@ -390,7 +539,7 @@
             this.lblSearchFaculty.Location = new System.Drawing.Point(1, 3);
             this.lblSearchFaculty.Name = "lblSearchFaculty";
             this.lblSearchFaculty.Size = new System.Drawing.Size(65, 22);
-            this.lblSearchFaculty.TabIndex = 73;
+            this.lblSearchFaculty.TabIndex = 999999;
             this.lblSearchFaculty.Text = "Search: ";
             // 
             // cmbSearchFacultyChooseFromList
@@ -403,7 +552,7 @@
             this.cmbSearchFacultyChooseFromList.Location = new System.Drawing.Point(288, 32);
             this.cmbSearchFacultyChooseFromList.Name = "cmbSearchFacultyChooseFromList";
             this.cmbSearchFacultyChooseFromList.Size = new System.Drawing.Size(272, 24);
-            this.cmbSearchFacultyChooseFromList.TabIndex = 80;
+            this.cmbSearchFacultyChooseFromList.TabIndex = 104;
             // 
             // lblSearchFacultyId
             // 
@@ -414,7 +563,7 @@
             this.lblSearchFacultyId.Name = "lblSearchFacultyId";
             this.lblSearchFacultyId.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
             this.lblSearchFacultyId.Size = new System.Drawing.Size(64, 23);
-            this.lblSearchFacultyId.TabIndex = 77;
+            this.lblSearchFacultyId.TabIndex = 101;
             this.lblSearchFacultyId.Text = "Faculty Id:";
             // 
             // txtSearchFacultyId
@@ -425,7 +574,7 @@
             this.txtSearchFacultyId.MaxLength = 10;
             this.txtSearchFacultyId.Name = "txtSearchFacultyId";
             this.txtSearchFacultyId.Size = new System.Drawing.Size(272, 23);
-            this.txtSearchFacultyId.TabIndex = 78;
+            this.txtSearchFacultyId.TabIndex = 102;
             // 
             // chkSearchFacultyChooseFromList
             // 
@@ -436,7 +585,7 @@
             this.chkSearchFacultyChooseFromList.Name = "chkSearchFacultyChooseFromList";
             this.chkSearchFacultyChooseFromList.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.chkSearchFacultyChooseFromList.Size = new System.Drawing.Size(152, 23);
-            this.chkSearchFacultyChooseFromList.TabIndex = 79;
+            this.chkSearchFacultyChooseFromList.TabIndex = 103;
             this.chkSearchFacultyChooseFromList.Text = "Choose from list";
             this.chkSearchFacultyChooseFromList.UseVisualStyleBackColor = false;
             this.chkSearchFacultyChooseFromList.CheckedChanged += new System.EventHandler(this.chkSearchFacultyChooseFromList_CheckedChanged);
@@ -464,7 +613,7 @@
             this.rdSearch.Location = new System.Drawing.Point(296, 8);
             this.rdSearch.Name = "rdSearch";
             this.rdSearch.Size = new System.Drawing.Size(75, 20);
-            this.rdSearch.TabIndex = 138;
+            this.rdSearch.TabIndex = 4;
             this.rdSearch.Text = "Search";
             this.rdSearch.UseVisualStyleBackColor = false;
             this.rdSearch.CheckedChanged += new System.EventHandler(this.rdOperation_CheckedChanged);
@@ -479,7 +628,7 @@
             this.rdUpdate.Location = new System.Drawing.Point(200, 8);
             this.rdUpdate.Name = "rdUpdate";
             this.rdUpdate.Size = new System.Drawing.Size(77, 20);
-            this.rdUpdate.TabIndex = 137;
+            this.rdUpdate.TabIndex = 3;
             this.rdUpdate.Text = "Update";
             this.rdUpdate.UseVisualStyleBackColor = false;
             this.rdUpdate.CheckedChanged += new System.EventHandler(this.rdOperation_CheckedChanged);
@@ -495,7 +644,7 @@
             this.rdAddFaculty.Location = new System.Drawing.Point(112, 8);
             this.rdAddFaculty.Name = "rdAddFaculty";
             this.rdAddFaculty.Size = new System.Drawing.Size(53, 20);
-            this.rdAddFaculty.TabIndex = 136;
+            this.rdAddFaculty.TabIndex = 2;
             this.rdAddFaculty.TabStop = true;
             this.rdAddFaculty.Text = "Add";
             this.rdAddFaculty.UseVisualStyleBackColor = false;
@@ -510,7 +659,7 @@
             this.lblOperation.Name = "lblOperation";
             this.lblOperation.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.lblOperation.Size = new System.Drawing.Size(84, 30);
-            this.lblOperation.TabIndex = 135;
+            this.lblOperation.TabIndex = 999999;
             this.lblOperation.Text = "Operation:";
             // 
             // pnlFormTitle
@@ -532,17 +681,8 @@
             this.lblFacultyForm.Location = new System.Drawing.Point(0, 0);
             this.lblFacultyForm.Name = "lblFacultyForm";
             this.lblFacultyForm.Size = new System.Drawing.Size(118, 26);
-            this.lblFacultyForm.TabIndex = 1;
+            this.lblFacultyForm.TabIndex = 999999;
             this.lblFacultyForm.Text = "Faculty Form";
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(8, 408);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 16);
-            this.lblError.TabIndex = 1001;
             // 
             // FacultyForm
             // 
@@ -560,7 +700,10 @@
             this.Text = "FacultyForm";
             this.Load += new System.EventHandler(this.FacultyForm_Load);
             this.pnlFacultyBody.ResumeLayout(false);
-            this.pnlFacultyBody.PerformLayout();
+            this.pnlMessageInfo.ResumeLayout(false);
+            this.pnlMessageInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgOops)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgWow)).EndInit();
             this.pnlForm.ResumeLayout(false);
             this.pnlForm.PerformLayout();
             this.pnlSearch.ResumeLayout(false);
@@ -613,5 +756,16 @@
         private System.Windows.Forms.RadioButton rdUpdate;
         private System.Windows.Forms.RadioButton rdAddFaculty;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblRequiredMessage;
+        private System.Windows.Forms.Label lblRequired5;
+        private System.Windows.Forms.Label lblRequired4;
+        private System.Windows.Forms.Label lblRequired3;
+        private System.Windows.Forms.Label lblRequired2;
+        private System.Windows.Forms.Label lblRequired1;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Label lblSuccess;
+        private System.Windows.Forms.Panel pnlMessageInfo;
+        private System.Windows.Forms.PictureBox imgWow;
+        private System.Windows.Forms.PictureBox imgOops;
     }
 }

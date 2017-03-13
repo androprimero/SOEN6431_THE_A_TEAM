@@ -14,7 +14,12 @@ namespace AcademicManagementSystem.DataLayer.Person
         private DatabaseConnection dbConnect = new DatabaseConnection();
         private String query = "";
         #endregion
-        //Get FacultyData
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="personType"></param>
+        /// <returns></returns>
         public PersonDto SelectLatestPersonByType(int personType)
         {
             PersonDto personDto;
@@ -29,7 +34,8 @@ namespace AcademicManagementSystem.DataLayer.Person
                 {
 
                     //Person Info
-                    personDto.PersonCode = reader.GetString(0);
+
+                    personDto.PersonId = reader.GetInt32(0);
                     personDto.Firstname = reader.GetString(1);
                     personDto.Lastname = reader.GetString(2);
                     personDto.DateOfBirth = reader.GetDateTime(3);
@@ -37,7 +43,6 @@ namespace AcademicManagementSystem.DataLayer.Person
                     personDto.Gender = reader.GetString(5);
                     personDto.Address = reader.GetString(6);
                     personDto.PersonType = reader.GetInt32(7);
-                    personDto.PersonId = reader.GetInt32(8);
                 }
 
 
@@ -55,14 +60,18 @@ namespace AcademicManagementSystem.DataLayer.Person
             return personDto;
         }
 
-        public int InsertPerson(PersonDto person)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="personDto"></param>
+        /// <returns></returns>
+        public int InsertPerson(PersonDto personDto)
         {
-            int insertedId = 0;
+            int returnValue = 0;
             try
             {
-
-                query = InsertPersonQuery(person);
-                insertedId = dbConnect.ExecuteQueries(query, true);
+                query = InsertPersonQuery(personDto);
+                returnValue = dbConnect.ExecuteQueries(query, false);
             }
             catch (Exception ex)
             {
@@ -74,34 +83,125 @@ namespace AcademicManagementSystem.DataLayer.Person
                 dbConnect.CloseConnection();
             }
 
-            return insertedId;
+            return returnValue;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="personDto"></param>
+        /// <returns></returns>
+        public int UpdatePerson(PersonDto personDto)
+        {
+            int returnValue = 0;
+            try
+            {
+                query = UpdatePersonQuery(personDto);
+                returnValue = dbConnect.ExecuteQueries(query, false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
+            finally
+            {
+                dbConnect.CloseConnection();
+            }
+
+            return returnValue;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="personId"></param>
+        /// <returns></returns>
+        public PersonDto SelectPersonById(int personId)
+        {
+            PersonDto personDto;
+            try
+            {
+
+                personDto = new PersonDto();
+                query = SelectPersonByIdQuery(personId);
+                OleDbDataReader reader = dbConnect.SelectDataReader(query);
+
+                if (reader.Read() && reader.GetValue(0) != DBNull.Value)
+                {
+                    //Person Info
+                    personDto.PersonId = reader.GetInt32(0);
+                    personDto.Firstname = reader.GetString(1);
+                    personDto.Lastname = reader.GetString(2);
+                    personDto.DateOfBirth = reader.GetDateTime(3);
+                    personDto.PostalCode = reader.GetInt32(4);
+                    personDto.Gender = reader.GetString(5);
+                    personDto.Address = reader.GetString(6);
+                    personDto.PersonType = reader.GetInt32(7);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                dbConnect.CloseConnection();
+            }
+            return personDto;
+        }
 
         #region 'Private Queries'
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="personType"></param>
+        /// <returns></returns>
         private String SelectLatestPersonByTypeQuery(int personType)
         {
-            return @"SELECT TOP 1 Person.PersonCode, Person.fname, Person.lname, Person.dob, Person.postalcode, Person.gender, Person.address, Person.PersonType, Person.PersonId
+            return @"SELECT TOP 1  Person.PersonId, Person.fname, Person.lname, Person.dob, Person.postalcode, Person.gender, Person.address, Person.PersonType
                         FROM Person 
                     WHERE Person.PersonType=" + personType +
-                    "  ORDER BY Person.PersonCode DESC";
+                    "  ORDER BY Person.PersonId DESC";
 
         }
 
-        private String SelectLatestPersonByCodeQuery(string code)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="personId"></param>
+        /// <returns></returns>
+        private String SelectPersonByIdQuery(int personId)
         {
-            return @"SELECT  Person.PersonCode, Person.fname, Person.lname, Person.dob, Person.postalcode, Person.gender, Person.address, Person.PersonType, Person.PersonId
+            return @"SELECT Person.PersonId, Person.fname, Person.lname, Person.dob, Person.postalcode, Person.gender, Person.address, Person.PersonType
                         FROM Person
-                     WHERE Person.PersonCode = '" + code + "'";
+                     WHERE Person.PersonId =" + personId;
 
         }
 
-        private String InsertPersonQuery(PersonDto person)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="personDto"></param>
+        /// <returns></returns>
+        private String InsertPersonQuery(PersonDto personDto)
         {
-            return @"INSERT INTO person(personCode, fname, lname, dob, postalcode, gender, address, PersonType) 
+            return @"INSERT INTO person(personId, fname, lname, dob, postalcode, gender, address, PersonType) 
                      Values
-                    ('" + person.PersonCode + "','" + person.Firstname + "','" + person.Lastname + "',#" + person.DateOfBirth + "#," + person.PostalCode + ",'" + person.Gender + "','" + person.Address + "'," + person.PersonType + ")";
+                    (" + personDto.PersonId + ",'" + personDto.Firstname + "','" + personDto.Lastname + "',#" + personDto.DateOfBirth + "#," + personDto.PostalCode + ",'" + personDto.Gender + "','" + personDto.Address + "'," + personDto.PersonType + ")";
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="personDto"></param>
+        /// <returns></returns>
+        private String UpdatePersonQuery(PersonDto personDto)
+        {
+            return @"UPDATE Person SET fname = '" + personDto.Firstname + "', lname = '" + personDto.Lastname + "', address = '" + personDto.Address + "', postalcode = " + personDto.PostalCode +
+                                        ", dob =#" + personDto.DateOfBirth + "# , gender = '" + personDto.Gender + "'  WHERE personid = " + personDto.PersonId ;
         }
 
         #endregion

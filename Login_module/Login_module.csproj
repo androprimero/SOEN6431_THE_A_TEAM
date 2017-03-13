@@ -61,7 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\Faculty.cs" />
+    <Compile Include="BusinessLayer\Person.cs" />
     <Compile Include="Common\ComboBoxBinding.cs" />
+    <Compile Include="Common\CommonFunctions.cs" />
     <Compile Include="Common\DatabaseConnection.cs" />
     <Compile Include="Common\EnumCommonClass.cs" />
     <Compile Include="course.cs">
@@ -325,7 +328,8 @@
     <None Include="Resources\registration.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BusinessLayer\" />
+    <Content Include="Resources\oops.jpg" />
+    <Content Include="Resources\wow.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">

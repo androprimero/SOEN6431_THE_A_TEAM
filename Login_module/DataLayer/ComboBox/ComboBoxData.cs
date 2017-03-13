@@ -100,9 +100,8 @@ namespace AcademicManagementSystem.DataLayer.ComboBox
 
         private String SelectFacultyMemberQuery()
         {
-            return @"SELECT
-						   p.personCode AS Code
-                         ,IIF(ISNULL([p.fname]), '', [p.fname]) +' '+ IIF(ISNULL([p.lname]), '', [p.lname]) + ' (' + p.personCode + ')'   AS Description
+            return @"SELECT p.personId AS Code
+                            ,IIF(ISNULL([p.fname]), '', [p.fname]) +' '+ IIF(ISNULL([p.lname]), '', [p.lname]) + ' (' + Str(p.personId) + ')'   AS Description
                      FROM PERSON p
                     where   p.personType=1";
         }
@@ -110,9 +109,8 @@ namespace AcademicManagementSystem.DataLayer.ComboBox
 
         private String SelectStudentsQuery()
         {
-            return @"SELECT
-						   p.personCode AS Code
-                         ,IIF(ISNULL([p.fname]), '', [p.fname]) +' '+ IIF(ISNULL([p.lname]), '', [p.lname]) + ' (' + p.personCode + ')'   AS Description
+            return @"SELECT p.personId AS Code
+                            ,IIF(ISNULL([p.fname]), '', [p.fname]) +' '+ IIF(ISNULL([p.lname]), '', [p.lname]) + ' (' + Str(p.personId) + ')'   AS Description
                      FROM PERSON p
                     where   p.personType=2";
         }

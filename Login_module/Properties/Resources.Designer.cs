@@ -373,6 +373,16 @@ namespace AcademicManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap oops {
+            get {
+                object obj = ResourceManager.GetObject("oops", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap registration {
             get {
                 object obj = ResourceManager.GetObject("registration", resourceCulture);
@@ -436,6 +446,16 @@ namespace AcademicManagementSystem.Properties {
         internal static System.Drawing.Bitmap Student_form3 {
             get {
                 object obj = ResourceManager.GetObject("Student_form3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wow {
+            get {
+                object obj = ResourceManager.GetObject("wow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
